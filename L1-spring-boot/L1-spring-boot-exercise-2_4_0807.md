@@ -69,7 +69,7 @@
 
     @RestController
     @RequiredArgsConstructor
-    public class IronBankController {
+    public class BankController {
         // ... існуюче поле та методи
 
         // ✅ ДОДАЙТЕ ЦЕЙ МЕТОД
