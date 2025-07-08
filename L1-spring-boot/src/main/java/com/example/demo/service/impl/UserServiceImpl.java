@@ -6,6 +6,7 @@ import com.example.demo.mapper.UserMapper;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.BankManagementService;
 import com.example.demo.service.UserService;
+import jakarta.transaction.Transactional;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,11 +19,11 @@ public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
 
     @Override
+    @Transactional
     public List<UserDto> getAllUsers() {
         final List<User> users = userRepository.findAll();
-        final List<UserDto> userDtos = users.stream()
+        return users.stream()
                 .map(userMapper::toDto)
                 .toList();
-        return userDtos;
     }
 }
