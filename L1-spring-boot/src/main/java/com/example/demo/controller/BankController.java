@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.UserDto;
 import com.example.demo.dto.UserRegistrationDto;
 import com.example.demo.entity.User;
 import com.example.demo.service.BankManagementService;
@@ -20,9 +21,10 @@ public class BankController {
     private final BankManagementService bankService;
 
     // Ендпоінт для реєстрації користувача
-    @PostMapping("/users")
-    public User registerUser(@RequestBody UserRegistrationDto request) {
-        return bankService.registerNewUser(request.getName(), request.getSurname(), request.getBankId());
+    @PostMapping("/{bank_id}/users")
+    public ResponseEntity<UserDto> registerUser(@PathVariable("bank_id") Long bankId, @RequestBody UserRegistrationDto request) {
+        final UserDto userDto = bankService.registerNewUser(request.getName(), request.getSurname(), bankId);
+        return ResponseEntity.ok(userDto);
     }
 
     // Ендпоінт для видалення користувача

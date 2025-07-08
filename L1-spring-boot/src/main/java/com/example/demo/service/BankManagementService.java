@@ -1,10 +1,10 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.User;
+import com.example.demo.dto.UserDto;
 
 public interface BankManagementService {
 
-    User registerNewUser(String name, String surname, Long bankId);
+    UserDto registerNewUser(String name, String surname, Long bankId);
 
     void deleteUser(Long userId);
 }

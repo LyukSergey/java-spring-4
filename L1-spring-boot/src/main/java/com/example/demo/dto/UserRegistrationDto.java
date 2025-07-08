@@ -13,5 +13,4 @@ public class UserRegistrationDto {
 
     private String name;
     private String surname;
-    private Long bankId;
 }

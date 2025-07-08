@@ -15,7 +15,7 @@ public class UserMapper {
         userDto.setId(user.getId());
         userDto.setName(user.getName());
         userDto.setSurname(user.getSurname());
-        userDto.setBankId(user.getBank().getId());
+        userDto.setBankName(user.getBank().getName());
 
         return userDto;
     }

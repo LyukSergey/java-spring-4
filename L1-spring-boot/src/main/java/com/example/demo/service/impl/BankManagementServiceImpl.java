@@ -1,11 +1,14 @@
 package com.example.demo.service.impl;
 
+import com.example.demo.dto.UserDto;
 import com.example.demo.entity.Bank;
 import com.example.demo.entity.User;
+import com.example.demo.mapper.UserMapper;
 import com.example.demo.repository.BankRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.BankManagementService;
 import jakarta.transaction.Transactional;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,19 +18,18 @@ public class BankManagementServiceImpl implements BankManagementService {
 
     private final BankRepository bankRepository;
     private final UserRepository userRepository;
+    private final UserMapper userMapper;
 
     @Override
     @Transactional
-    public User registerNewUser(String name, String surname, Long bankId) {
+    public UserDto registerNewUser(String name, String surname, Long bankId) {
         Bank bank = bankRepository.findById(bankId)
                 .orElseThrow(() -> new RuntimeException("Банк не знайдено!"));
-
         User newUser = new User();
         newUser.setName(name);
         newUser.setSurname(surname);
         newUser.setBank(bank);
-
-        return userRepository.save(newUser);
+        return userMapper.toDto(userRepository.save(newUser));
     }
 
     @Override
