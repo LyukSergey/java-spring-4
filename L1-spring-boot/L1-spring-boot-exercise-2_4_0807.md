@@ -74,8 +74,8 @@
 
         // ✅ ДОДАЙТЕ ЦЕЙ МЕТОД
         @GetMapping("/banks/{bankId}/users")
-        public List<User> getUsersByBank(@PathVariable Long bankId) {
-            return bankService.getUsersByBank(bankId);
+        public ResponseEntity<List<User>> getUsersByBank(@PathVariable Long bankId) {
+            // ✅ ДОДАЙТЕ ЛОГІКУ ДЛЯ ОТРИМАННЯ КОРИСТУВАЧІВ
         }
     }
     ```
@@ -105,7 +105,7 @@
 
 #### **Крок 2: Рівень Сервісу — Додаємо логіку видалення**
 
-1.  Поверніться до класу `BankManagementService.java`.
+1.  Поверніться до класу `UserService.java`.
 
 2.  Додайте новий метод `deleteUser`. Оскільки це операція, що змінює дані, її варто позначити анотацією `@Transactional`.
 
@@ -125,19 +125,19 @@
 
 #### **Крок 3: Рівень Контролера — Створюємо ендпоінт для видалення**
 
-1.  Відкрийте ваш REST-контролер (`IronBankController.java`).
+1.  Відкрийте ваш REST-контролер (`UserController.java`).
 
 2.  Додайте метод для обробки HTTP DELETE-запитів.
 
     ```java
-    // ... всередині класу IronBankController ...
+    // ... всередині класу UserController ...
 
     import org.springframework.http.ResponseEntity;
     import org.springframework.web.bind.annotation.DeleteMapping;
     import org.springframework.web.bind.annotation.PathVariable;
 
     // ✅ ДОДАЙТЕ ЦЕЙ МЕТОД
-    @DeleteMapping("/users/{userId}")
+    @DeleteMapping("/{userId}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long userId) {
         bankService.deleteUser(userId);
         return ResponseEntity.noContent().build();

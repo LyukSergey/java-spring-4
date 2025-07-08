@@ -21,7 +21,6 @@ public class BankManagementServiceImpl implements BankManagementService {
     private final UserMapper userMapper;
 
     @Override
-    @Transactional
     public UserDto registerNewUser(String name, String surname, Long bankId) {
         Bank bank = bankRepository.findById(bankId)
                 .orElseThrow(() -> new RuntimeException("Банк не знайдено!"));
