@@ -33,6 +33,15 @@ public class BankManagementServiceImpl implements BankManagementService {
 
     @Override
     @Transactional
+    public List<UserDto> getUsersByBank(Long bankId) {
+        final List<User> users = userRepository.findAllByBankId(bankId);
+        return users.stream()
+                .map(userMapper::toDto)
+                .toList();
+    }
+
+    @Override
+    @Transactional
     public void deleteUser(Long userId) {
 
         userRepository.deleteById(userId);
