@@ -26,4 +26,13 @@ public class UserServiceImpl implements UserService {
                 .map(userMapper::toDto)
                 .toList();
     }
+
+    @Override
+    @Transactional
+    public void deleteUser(Long userId) {
+        if (!userRepository.existsById(userId)) {
+            throw new RuntimeException("Користувача з ID " + userId + " не знайдено.");
+        }
+        userRepository.deleteById(userId);
+    }
 }
