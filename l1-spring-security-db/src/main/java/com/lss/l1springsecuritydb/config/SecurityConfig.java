@@ -20,6 +20,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+                .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/home").authenticated() // Сторінка /home вимагає аутентифікації
                         .anyRequest().permitAll() // Всі інші (включаючи / і /login) доступні для всіх

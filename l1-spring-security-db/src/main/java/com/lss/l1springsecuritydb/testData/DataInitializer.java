@@ -7,6 +7,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
+//Інтерфейс CommandLineRunner — це спеціальний індикатор для Spring Boot.
+//Коли ви створюєте бін (@Component), який реалізує цей інтерфейс,
+// Spring Boot автоматично знаходить його і виконує його метод run()
+// одразу після того, як додаток повністю запустився і контекст
+// (ApplicationContext) готовий.
+
 @Component
 @RequiredArgsConstructor
 public class DataInitializer implements CommandLineRunner {
