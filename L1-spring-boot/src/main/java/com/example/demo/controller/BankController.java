@@ -17,10 +17,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/banks") // Базовий шлях для всіх ендпоінтів
-@RequiredArgsConstructor
+
 public class BankController {
 
     private final BankManagementService bankService;
+
+    public BankController(BankManagementService bankService) {
+        this.bankService = bankService;
+    }
 
     // Ендпоінт для реєстрації користувача
     @PostMapping("/{bank_id}/users")
