@@ -9,6 +9,8 @@ import com.example.demo.repository.UserRepository;
 import com.example.demo.service.BankManagementService;
 import jakarta.transaction.Transactional;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -36,5 +38,10 @@ public class BankManagementServiceImpl implements BankManagementService {
     public void deleteUser(Long userId) {
 
         userRepository.deleteById(userId);
+    }
+    @Override
+    public List<UserDto> getUsersByBank(Long bankId) {
+        final List<User> users = userRepository.findAllByBankId(bankId);
+        return users.stream().map(userMapper::toDto).toList();
     }
 }
