@@ -19,7 +19,6 @@
         * **Client authentication**: `OFF` (це публічний клієнт).
         * **Authorization**: Увімкніть `Standard flow`.
         * **Valid Redirect URIs**: `http://localhost:63342/*` (адреса, куди можна повернутися після логіну).
-        * **Valid Redirect URIs**: `http://localhost:63342/*` (адреса, куди можна повернутися після логіну).
         * **Web Origins**: `http://localhost:63342` (адреса, з якої дозволені запити до Keycloak).
     * Натисніть **Save**.
 
