@@ -1,15 +1,21 @@
+
 spring:
   application:
-    name: L1-spring-boot
-  datasource:
-    url: jdbc:postgresql://localhost:5432/l1-spring-boot_db
-    username: demo_user
-    password: demo_pass
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    hibernate:
-      ddl-auto: validate
-    show-sql: true
-    open-in-view: false
-  liquibase:
-    change-log: classpath:/db/changelog/db.changelog-master.xml
+    name: test_security
+    datasource:
+        url: jdbc:postgresql://localhost:5433/l1-spring-security_db
+        username: demo_user
+        password: demo_password
+        driver-class-name: org.postgresql.Driver
+  # JPA / Hibernate
+  # Вказуємо Spring, що ми працюємо з PostgreSQL
+    jpa:
+        hibernate:
+        ddl-auto: update
+    # Властивості, що передаються напряму в Hibernate
+    properties:
+      hibernate:
+        # Явно вказуємо, що ми працюємо з діалектом PostgreSQL
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show-sql: true
+        open-in-view: falsee
