@@ -7,7 +7,7 @@
 
     * Увійдіть в **Administration Console**.
     * Наведіть на поточний realm (напр. "Master") і натисніть **Create Realm**.
-    * **Realm name**: `my-prod-app-realm`
+    * **Realm (королівство) name**: `my-prod-app-realm`
     * Натисніть **Create**.
 
 3.  **Створіть нового Клієнта для Front-End:**
@@ -100,6 +100,8 @@
         private JwtAuthenticationConverter jwtAuthenticationConverter() {
             JwtAuthenticationConverter jwtConverter = new JwtAuthenticationConverter();
             jwtConverter.setJwtGrantedAuthoritiesConverter(jwt -> {
+                // Claim - твердження
+                // це будь-яка частина інформації про користувача або про сам токен, яка передається всередині JWT у вигляді пари "ключ-значення"
                 Map<String, Collection<String>> realmAccess = jwt.getClaim("realm_access");
                 if (realmAccess == null || realmAccess.isEmpty()) return List.of();
                 return realmAccess.get("roles").stream()
