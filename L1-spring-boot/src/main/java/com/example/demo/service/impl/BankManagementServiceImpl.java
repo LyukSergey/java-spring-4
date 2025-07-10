@@ -14,12 +14,18 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
+
 public class BankManagementServiceImpl implements BankManagementService {
 
     private final BankRepository bankRepository;
     private final UserRepository userRepository;
     private final UserMapper userMapper;
+
+    public BankManagementServiceImpl(BankRepository bankRepository, UserRepository userRepository, UserMapper userMapper) {
+        this.bankRepository = bankRepository;
+        this.userRepository = userRepository;
+        this.userMapper = userMapper;
+    }
 
     @Override
     public UserDto registerNewUser(String name, String surname, Long bankId) {
@@ -32,12 +38,14 @@ public class BankManagementServiceImpl implements BankManagementService {
         return userMapper.toDto(userRepository.save(newUser));
     }
 
-    @Override
     @Transactional
+    @Override
     public List<UserDto> getUsersByBank(Long bankId) {
-        final List<User> users = userRepository.findAllByBankId(bankId);
+        bankRepository.findById(bankId)
+                .orElseThrow(() -> new RuntimeException("Bank not found"));
+        List<User> users = userRepository.findAllByBankId(bankId);
         return users.stream()
-                .map(user -> userMapper.toDto(user))
+                .map(userMapper::toDto)
                 .toList();
     }
 
@@ -47,4 +55,6 @@ public class BankManagementServiceImpl implements BankManagementService {
 
         userRepository.deleteById(userId);
     }
+
+
 }

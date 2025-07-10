@@ -2,7 +2,11 @@ package com.example.demo.service;
 
 import com.example.demo.dto.UserDto;
 import com.example.demo.entity.User;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
+@Service
 
 public interface BankManagementService {
 
@@ -11,4 +15,8 @@ public interface BankManagementService {
     void deleteUser(Long userId);
 
     List<UserDto> getUsersByBank(Long bankId);
+
+
+
 }
+
