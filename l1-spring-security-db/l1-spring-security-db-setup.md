@@ -161,7 +161,6 @@ public class JpaUserDetailsService implements UserDetailsService {
     }
 }
 ```
-
 -----
 
 ### \#\# Крок 5: Налаштування `SecurityFilterChain`
