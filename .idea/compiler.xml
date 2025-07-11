@@ -10,6 +10,18 @@
         </processorPath>
         <module name="L1-spring-boot-security.main" />
       </profile>
+      <profile name="Annotation profile for l1-spring-security-db" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="l1-spring-security-db" />
+        <module name="L1-spring-boot" />
+      </profile>
+      <profile name="Annotation profile for L1-spring-boot-security-spa-add-new-user" enabled="true">
       <profile name="Annotation profile for L1-spring-boot-security" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -28,7 +40,9 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
+        <module name="L1-spring-boot-security-spa-add-new-user" />
         <module name="L1-spring-boot-security-spa" />
+        <module name="L1-spring-boot-security" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -41,8 +55,10 @@
       <module name="L1-spring-boot-demo" options="-parameters" />
       <module name="L1-spring-boot-security" options="-parameters" />
       <module name="L1-spring-boot-security-spa" options="-parameters" />
+      <module name="L1-spring-boot-security-spa-add-new-user" options="-parameters" />
       <module name="L1-spring-boot-security.main" options="-parameters" />
       <module name="L1-spring-boot-security.test" options="-parameters" />
+      <module name="l1-spring-security-db" options="-parameters" />
     </option>
   </component>
 </project>
