@@ -16,12 +16,22 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
-        <module name="L1-spring-boot-security" />
+        <module name="l1-spring-security-db" />
         <module name="L1-spring-boot" />
+      </profile>
+      <profile name="Annotation profile for L1-spring-boot-security-spa-add-new-user" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="L1-spring-boot-security-spa-add-new-user" />
         <module name="L1-spring-boot-security-spa" />
         <module name="Haraviuk" />
-        <module name="l1-spring-security-db" />
+        <module name="L1-spring-boot-security" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -35,6 +45,7 @@
       <module name="L1-spring-boot-demo" options="-parameters" />
       <module name="L1-spring-boot-security" options="-parameters" />
       <module name="L1-spring-boot-security-spa" options="-parameters" />
+      <module name="L1-spring-boot-security-spa-add-new-user" options="-parameters" />
       <module name="L1-spring-boot-security.main" options="-parameters" />
       <module name="L1-spring-boot-security.test" options="-parameters" />
       <module name="l1-spring-security-db" options="-parameters" />
