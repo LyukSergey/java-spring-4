@@ -8,6 +8,7 @@ import com.example.demo.repository.BankRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.BankManagementService;
 import jakarta.transaction.Transactional;
+import java.util.ArrayList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +34,16 @@ public class BankManagementServiceImpl implements BankManagementService {
         return userMapper.toDto(userRepository.save(newUser));
     }
 
-    
+    @Override
+    @Transactional
+    public List<UserDto> getUsersByBank(Long bankId) {
+        final List<User> users = userRepository.findAllByBankId(bankId);
+        return users.stream()
+                .map(user -> userMapper.toDto(user))
+                .toList();
+    }
+
+
 
     @Override
     @Transactional
