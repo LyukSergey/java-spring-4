@@ -69,7 +69,7 @@ public class SecurityConfig {
         return jwtConverter;
     }
 
-    // ✅ ОБОВ'ЯЗКОВА КОНФІГУРАЦІЯ CORS
+    // ОБОВ'ЯЗКОВА КОНФІГУРАЦІЯ CORS
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();

@@ -8,7 +8,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.resource.RealmResource;
-import org.keycloak.admin.client.resource.RoleScopeResource;
 import org.keycloak.admin.client.resource.UsersResource;
 import org.keycloak.representations.idm.CredentialRepresentation;
 import org.keycloak.representations.idm.RoleRepresentation;
@@ -33,7 +32,7 @@ public class RegistrationService {
                 .roles()
                 .get("app_user")
                 .toRepresentation();
-        createNewUserInKeycloacl(username, usersResource, user)
+        createNewUserInKeycloak(username, usersResource, user)
                 .ifPresent(newKeycloackUser -> getUserRoles(usersResource, newKeycloackUser.getId(), newKeycloackUser.getUsername(),
                         defaultRole));
     }
@@ -51,7 +50,7 @@ public class RegistrationService {
         }
     }
 
-    private static Optional<UserRepresentation> createNewUserInKeycloacl(String username, UsersResource usersResource,
+    private static Optional<UserRepresentation> createNewUserInKeycloak(String username, UsersResource usersResource,
             UserRepresentation user) {
         try (Response response = usersResource.create(user)) {
             if (response.getStatus() != 201) {
