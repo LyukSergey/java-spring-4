@@ -37,4 +37,9 @@ public class BankManagementServiceImpl implements BankManagementService {
 
         userRepository.deleteById(userId);
     }
+    public List<User> getUsersByBank(Long bankId) {
+        return userRepository.findAllByBankId(bankId);
+    }
+
+
 }

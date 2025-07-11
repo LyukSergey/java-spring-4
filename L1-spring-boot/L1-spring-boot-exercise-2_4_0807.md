@@ -117,7 +117,7 @@
     import org.springframework.transaction.annotation.Transactional;
 
     // ✅ ДОДАЙТЕ ЦЕЙ МЕТОД
-    @Transactional
+    @Transact ional
     public void deleteUser(Long userId) {
         // Тут можна додати перевірку на існування користувача, якщо потрібно
         // наприклад, if (!userRepository.existsById(userId)) { throw ... }
