@@ -12,6 +12,7 @@ import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+
 @Service
 @RequiredArgsConstructor
 public class BankManagementServiceImpl implements BankManagementService {
@@ -30,7 +31,11 @@ public class BankManagementServiceImpl implements BankManagementService {
         newUser.setBank(bank);
         return userMapper.toDto(userRepository.save(newUser));
     }
-
+    @Override
+    public List<UserDto> getUsersByBank(Long bankId) {
+        final List<User> users = userRepository.findAllByBankId(bankId);
+        return users.stream().map(userMapper::toDto).toList();
+    }
     @Override
     @Transactional
     public void deleteUser(Long userId) {
