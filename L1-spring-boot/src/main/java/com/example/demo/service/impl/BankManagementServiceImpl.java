@@ -8,6 +8,8 @@ import com.example.demo.repository.BankRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.BankManagementService;
 import jakarta.transaction.Transactional;
+
+import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -30,6 +32,8 @@ public class BankManagementServiceImpl implements BankManagementService {
         newUser.setBank(bank);
         return userMapper.toDto(userRepository.save(newUser));
     }
+
+    
 
     @Override
     @Transactional
