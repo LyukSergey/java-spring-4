@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: L1-spring-boot-security-spa-add-new-user
