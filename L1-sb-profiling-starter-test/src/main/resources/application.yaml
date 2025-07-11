@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: L1-sb-profiling-starter-test
+
+profiling:
+  enabled: true
