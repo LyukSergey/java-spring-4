@@ -1,3 +1,4 @@
+
 package com.lss.l1springbootsecurityspa.controller;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;

@@ -4,7 +4,7 @@ spring:
 
   # PostgreSQL DataSource
   datasource:
-    url: jdbc:postgresql://localhost:5432/l1-spring-security_db
+    url: jdbc:postgresql://localhost:5433/l1-spring-security_db
     username: demo_user
     password: demo_password
     driver-class-name: org.postgresql.Driver
