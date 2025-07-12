@@ -7,7 +7,7 @@
 
     * Увійдіть в **Administration Console**.
     * Наведіть на поточний realm (напр. "Master") і натисніть **Create Realm**.
-    * **Realm name**: `my-prod-app-realm`
+    * **Realm (королівство) name**: `my-prod-app-realm`
     * Натисніть **Create**.
 
 3.  **Створіть нового Клієнта для Front-End:**
@@ -18,7 +18,6 @@
     * **ОБОВ'ЯЗКОВІ НАЛАШТУВАННЯ:**
         * **Client authentication**: `OFF` (це публічний клієнт).
         * **Authorization**: Увімкніть `Standard flow`.
-        * **Valid Redirect URIs**: `http://localhost:63342/*` (адреса, куди можна повернутися після логіну).
         * **Valid Redirect URIs**: `http://localhost:63342/*` (адреса, куди можна повернутися після логіну).
         * **Web Origins**: `http://localhost:63342` (адреса, з якої дозволені запити до Keycloak).
     * Натисніть **Save**.
@@ -50,7 +49,7 @@
           resourceserver:
             jwt:
               # ✅ ОБОВ'ЯЗКОВО: Вказуємо на наш новий realm
-              issuer-uri: http://localhost:8180/realms/my-prod-app-realm
+              issuer-uri: http://localhost:8081/realms/my-prod-app-realm
     ```
 
     **Акцент:** Це єдина властивість, потрібна для бекенда, щоб валідувати токени. Він не знає ніяких секретів клієнта.
@@ -101,6 +100,8 @@
         private JwtAuthenticationConverter jwtAuthenticationConverter() {
             JwtAuthenticationConverter jwtConverter = new JwtAuthenticationConverter();
             jwtConverter.setJwtGrantedAuthoritiesConverter(jwt -> {
+                // Claim - твердження
+                // це будь-яка частина інформації про користувача або про сам токен, яка передається всередині JWT у вигляді пари "ключ-значення"
                 Map<String, Collection<String>> realmAccess = jwt.getClaim("realm_access");
                 if (realmAccess == null || realmAccess.isEmpty()) return List.of();
                 return realmAccess.get("roles").stream()
@@ -163,7 +164,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Prod App Demo</title>
-    <script src="http://localhost:8180/js/keycloak.js"></script>
+    <script src="http://localhost:8081/js/keycloak.js"></script>
     <style> body { font-family: sans-serif; padding: 2em; } button { padding: 10px; margin: 5px; } pre { background-color: #eee; padding: 1em; } </style>
 </head>
 <body>
@@ -181,7 +182,7 @@
 <script>
     // 2. Налаштування клієнта
     const keycloak = new Keycloak({
-        url: 'http://localhost:8180',
+        url: 'http://localhost:8081',
         realm: 'my-prod-app-realm',
         clientId: 'my-webapp-client'
     });
