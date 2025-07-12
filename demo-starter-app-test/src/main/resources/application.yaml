@@ -1,0 +1,6 @@
+spring:
+ application:
+   name: demo-starter-app-test
+
+profiling:
+    enabled: true
