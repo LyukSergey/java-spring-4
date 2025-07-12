@@ -11,7 +11,6 @@
         <option value="$PROJECT_DIR$/L1-spring-boot-security-spa/pom.xml" />
         <option value="$PROJECT_DIR$/l1-spring-security-db/pom.xml" />
         <option value="$PROJECT_DIR$/L1-spring-boot-security-spa-add-new-user/pom.xml" />
-        <option value="$PROJECT_DIR$/chernikova_katerina/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -100,7 +99,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_20" default="true" project-jdk-name="corretto-21" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="corretto-21" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
