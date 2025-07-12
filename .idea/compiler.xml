@@ -19,7 +19,6 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
         <module name="l1-spring-security-db" />
-        <module name="chernikova_katerina" />
         <module name="L1-spring-boot" />
       </profile>
       <profile name="Maven default annotation processors profile" enabled="true">
@@ -28,7 +27,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="L1-sb-profiling-starter" />
       </profile>
-      <profile name="Annotation profile for L1-sb-profiling-starter-test" enabled="true">
+      <profile name="Annotation profile for L1-spring-boot-security-spa-add-new-user" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -42,6 +41,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="chernikova_katerina" target="17" />
       <module name="L1-b-keckeloack-demo" target="17" />
       <module name="L1-spring-boot-demo" target="17" />
     </bytecodeTargetLevel>
