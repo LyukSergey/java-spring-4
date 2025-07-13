@@ -10,7 +10,12 @@
         </processorPath>
         <module name="L1-spring-boot-security.main" />
       </profile>
-      <profile name="Annotation profile for test_security" enabled="true">
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+      </profile>
+      <profile name="Annotation profile for test_add" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -21,6 +26,7 @@
         <module name="L1-spring-boot" />
         <module name="test_security" />
         <module name="L1-spring-boot-security-spa" />
+        <module name="test_add" />
         <module name="l1-spring-security-db" />
       </profile>
     </annotationProcessing>
@@ -37,6 +43,7 @@
       <module name="L1-spring-boot-security.main" options="-parameters" />
       <module name="L1-spring-boot-security.test" options="-parameters" />
       <module name="l1-spring-security-db" options="-parameters" />
+      <module name="test_add" options="-parameters" />
       <module name="test_security" options="-parameters" />
     </option>
   </component>

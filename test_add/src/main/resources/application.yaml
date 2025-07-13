@@ -1,0 +1,20 @@
+spring:
+    application:
+        name: L1-spring-boot-security-spa-add-new-user
+
+    security:
+        oauth2:
+            resourceserver:
+                jwt:
+                    issuer-uri: http://localhost:8081/realms/my-prod-app-realm
+
+keycloak:
+    admin-client:
+        server-url: http://localhost:8081
+        realm: my-prod-app-realm
+        client-id: backend-admin-client
+        client-secret: ojAjwSXctFD9TefZNLD3ZbMMG48LAVhK
+    logging:
+        level:
+            org.springframework.security: DEBUG
+            org.keycloak: DEBUG

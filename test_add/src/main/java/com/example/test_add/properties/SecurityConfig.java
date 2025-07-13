@@ -1,4 +1,4 @@
-package com.lss.l1springbootsecurityspa.config;
+package com.example.test_add.properties;
 
 import java.util.Collection;
 import java.util.List;
@@ -30,6 +30,7 @@ public class SecurityConfig {
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                        .requestMatchers("/register").permitAll()
                         .requestMatchers("/public").permitAll()
                         // ЗАХИСТ ЕНДПОІНТУ: Вимагаємо нашу нову роль "app_user"
                         .requestMatchers("/private").hasRole("app_user")
@@ -68,11 +69,11 @@ public class SecurityConfig {
         return jwtConverter;
     }
 
-    // ✅ ОБОВ'ЯЗКОВА КОНФІГУРАЦІЯ CORS
+    // ОБОВ'ЯЗКОВА КОНФІГУРАЦІЯ CORS
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://localhost:63342"));
+        configuration.setAllowedOrigins(List.of("http://localhost:3000"));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE"));
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type"));
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
