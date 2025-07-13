@@ -83,7 +83,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "profiling")
 public class ProfilingProperties {
     private boolean enabled = false; // За замовчуванням вимкнено
-    // getters and setters
+    // ! ми не використовуємо Lombok, тому обовязково треба прописати getters and setters
 }
 ```
 
@@ -139,8 +139,7 @@ com.lss.l1sbprofilingstarter.config.ProfilingAutoConfiguration
 і стартер просто не буде працювати. Це стандартний механізм реєстрації автоконфігурацій.
 
 #### **1.6. Клас який додає нашу логіку до бінів: `ProfilingBeanPostProcessor.java`**
-
-Це місце, де відбувається вся магія. 
+ 
 `BeanPostProcessor` — це спеціальний інтерфейс Spring, який дозволяє вам втрутитися в процес створення **кожного** біна в додатку.
 
 **Життєвий цикл біна та роботу `BeanPostProcessor`:**
@@ -158,7 +157,7 @@ com.lss.l1sbprofilingstarter.config.ProfilingAutoConfiguration
 
     * Spring передає **реальний, щойно створений** об'єкт `myServiceImpl` у метод `postProcessBeforeInitialization` 
     **кожного** `BeanPostProcessor`, включаючи наш.
-
+    beanName - це або назва метода, якщо через `@Bean`, або ім'я класу імплементації, якщо бін створено автоматично.
     ```java
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
@@ -178,8 +177,88 @@ com.lss.l1sbprofilingstarter.config.ProfilingAutoConfiguration
 
     * Spring викликає методи ініціалізації, наприклад, ті, що позначені `@PostConstruct`.
 
-5.  **5: `postProcessAfterInitialization`**
+5.  **5: `postProcessAfterInitialization` - Proxy (CGLIB - насдідування, DynamicProxy - інтерфейси)**
+6.  **DynamicProxy: (до Spring Boot 2.x,)**
+```java
+// Інтерфейс
+public interface TransactionalTestService {
+    void transactionalTestMethod();
+}
 
+// Оригінальний клас, який ви написали
+@Service
+public class TransactionalTestServiceImpl implements TransactionalTestService {
+
+    @Override
+    @Transactional // Spring бачить цю анотацію
+    public void transactionalTestMethod() {
+        System.out.println(">>> [РЕАЛЬНИЙ ОБ'ЄКТ] Початок основного методу.");
+        // Це і є "самовиклик" (self-invocation)
+        this.helperMethod(); 
+        System.out.println(">>> [РЕАЛЬНИЙ ОБ'ЄКТ] Кінець основного методу.");
+    }
+
+    // Другий метод цього ж класу
+    public void helperMethod() {
+        System.out.println(">>> [РЕАЛЬНИЙ ОБ'ЄКТ] Виклик допоміжного методу.");
+    }
+}
+
+// Цей клас генерується Spring "в пам'яті"
+public class JdkProxyForMyService implements TransactionalTestService {
+
+    // Проксі тримає посилання на СПРАВЖНІЙ об'єкт вашого сервісу
+    private final TransactionalTestServiceImpl realTarget;
+
+    public JdkProxyForMyService(TransactionalTestServiceImpl realTarget) {
+        this.realTarget = realTarget;
+    }
+
+    @Override
+    public void transactionalTestMethod() {
+        // --- ЛОГІКА ПРОКСІ (ПОЧАТОК) ---
+        System.out.println("✅ [JDK-ПРОКСІ] Перехоплено! Починаю транзакцію...");
+
+        // --- ВИКЛИК ОРИГІНАЛЬНОГО МЕТОДУ ---
+        // Проксі викликає метод на справжньому, цільовому об'єкті
+        realTarget.transactionalTestMethod();
+
+        // --- ЛОГІКА ПРОКСІ (КІНЕЦЬ) ---
+        System.out.println("✅ [JDK-ПРОКСІ] Завершую транзакцію (commit).");
+    }
+
+    // УВАГА: Проксі нічого не знає про helperMethod(), бо його немає в інтерфейсі!
+}
+```
+    
+7. **CGLIB**
+```java
+// Цей клас генерується Spring "в пам'яті" і наслідує ваш
+public class CglibProxyForMyService extends TransactionalTestServiceImpl {
+
+    @Override // Перевизначення основного методу
+    public void transactionalTestMethod() {
+        // --- ЛОГІКА ПРОКСІ (ПОЧАТОК) ---
+        System.out.println("✅ [CGLIB-ПРОКСІ] Перехоплено! Починаю транзакцію...");
+
+        // --- ВИКЛИК ОРИГІНАЛЬНОГО МЕТОДУ ---
+        // Викликаємо реалізацію з батьківського класу (вашого класу)
+        super.transactionalTestMethod();
+
+        // --- ЛОГІКА ПРОКСІ (КІНЕЦЬ) ---
+        System.out.println("✅ [CGLIB-ПРОКСІ] Завершую транзакцію (commit).");
+    }
+
+    @Override // CGLIB може перевизначити і публічні методи, навіть якщо їх немає в інтерфейсі
+    public void helperMethod() {
+        // Якби на цьому методі була анотація, її логіка була б тут
+        System.out.println("✅ [CGLIB-ПРОКСІ] Перехопив виклик helperMethod!");
+        super.helperMethod();
+    }
+}
+```
+8. 
+    
     * Бін **повністю готовий**, але ще не доданий у "пул" готових бінів. 
     * Spring востаннє передає його в метод `postProcessAfterInitialization`.
 
