@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: l1-sb-getun-starter
