@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+          http://www.liquibase.org/xml/ns/dbchangelog
+          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="4" author="sergiiLiuk">
+
+        <insert tableName="bank">
+            <column name="id" value="1"/>
+            <column name="name" value="Приват Банк"/>
+            <column name="total_amount" value="1000000.00"/>
+        </insert>
+        <insert tableName="bank">
+            <column name="id" value="1"/>
+            <column name="name" value="Райфайзен Банк"/>
+            <column name="total_amount" value="1000000.00"/>
+        </insert>
+
+        <insert tableName="users">
+            <column name="name" value="Іван"/>
+            <column name="surname" value="Франко"/>
+            <column name="bank_id" value="1"/>
+        </insert>
+        <insert tableName="users">
+            <column name="name" value="Тарас"/>
+            <column name="surname" value="Шевченко"/>
+            <column name="bank_id" value="1"/>
+        </insert>
+        <insert tableName="users">
+            <column name="name" value="Леся"/>
+            <column name="surname" value="Українка"/>
+            <column name="bank_id" value="1"/>
+        </insert>
+        <insert tableName="users">
+            <column name="name" value="Григорій"/>
+            <column name="surname" value="Сковорода"/>
+            <column name="bank_id" value="1"/>
+        </insert>
+        <insert tableName="users">
+            <column name="name" value="Ольга"/>
+            <column name="surname" value="Кобилянська"/>
+            <column name="bank_id" value="1"/>
+        </insert>
+        <insert tableName="users">
+            <column name="name" value="Богдан"/>
+            <column name="surname" value="Хмельницький"/>
+            <column name="bank_id" value="1"/>
+        </insert>
+        <insert tableName="users">
+            <column name="name" value="Ярослав"/>
+            <column name="surname" value="Мудрий"/>
+            <column name="bank_id" value="1"/>
+        </insert>
+        <insert tableName="users">
+            <column name="name" value="Соломія"/>
+            <column name="surname" value="Крушельницька"/>
+            <column name="bank_id" value="1"/>
+        </insert>
+        <insert tableName="users">
+            <column name="name" value="Михайло"/>
+            <column name="surname" value="Грушевський"/>
+            <column name="bank_id" value="1"/>
+        </insert>
+        <insert tableName="users">
+            <column name="name" value="Ліна"/>
+            <column name="surname" value="Костенко"/>
+            <column name="bank_id" value="1"/>
+        </insert>
+
+        <insert tableName="users">
+            <column name="name" value="Марія"/>
+            <column name="surname" value="Кюрі"/>
+            <column name="bank_id" value="2"/>
+        </insert>
+        <insert tableName="users">
+            <column name="name" value="Альберт"/>
+            <column name="surname" value="Ейнштейн"/>
+            <column name="bank_id" value="2"/>
+        </insert>
+        <insert tableName="users">
+            <column name="name" value="Нікола"/>
+            <column name="surname" value="Тесла"/>
+            <column name="bank_id" value="2"/>
+        </insert>
+        <insert tableName="users">
+            <column name="name" value="Ісаак"/>
+            <column name="surname" value="Ньютон"/>
+            <column name="bank_id" value="2"/>
+        </insert>
+        <insert tableName="users">
+            <column name="name" value="Леонардо"/>
+            <column name="surname" value="да Вінчі"/>
+            <column name="bank_id" value="2"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>
