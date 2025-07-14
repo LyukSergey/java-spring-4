@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: vashchyk_security_db
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/l1-spring-security_db
+    username: demo_user
+    password: demo_password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    open-in-view: false
