@@ -14,10 +14,15 @@
         <option value="$PROJECT_DIR$/L1-sb-profiling-starter/pom.xml" />
         <option value="$PROJECT_DIR$/L1-sb-profiling-starter-test/pom.xml" />
         <option value="$PROJECT_DIR$/L1-sb-data-jpa/pom.xml" />
+        <option value="$PROJECT_DIR$/L1B-spring-boot-spa-mazur/pom.xml" />
+        <option value="$PROJECT_DIR$/L1-sb-data-starter-mazur/pom.xml" />
+        <option value="$PROJECT_DIR$/L1-sb-profiling-starter-mazur/pom.xml" />
+        <option value="$PROJECT_DIR$/L1-sb-profiling-starter-test-mazur/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/L1-sb-data-starter-mazur/pom.xml" />
         <option value="$PROJECT_DIR$/L1-spring-boot-demo/pom.xml" />
       </set>
     </option>
