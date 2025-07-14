@@ -19,6 +19,7 @@
     <pre id="token-info">Немає токену.</pre>
 
 <script>
+<<<<<<< HEAD
     // 2. Налаштування клієнта
     const keycloak = new Keycloak({
         url: 'http://localhost:8180',
@@ -50,6 +51,51 @@
         .then(data => { apiResponseDiv.textContent = 'Відповідь від сервера: ' + data; })
         .catch(error => { apiResponseDiv.textContent = 'Помилка: ' + error; });
     }
+=======
+  // Створюємо об'єкт конфігурації для бібліотеки keycloak.js
+  const keycloak = new Keycloak({
+    url: 'http://localhost:8081',
+    realm: 'my-prod-app-realm',
+    clientId: 'my-webapp-client'
+  });
+
+  // Запускаємо процес ініціалізації
+  // check-sso (check Single Sign-On): Скрипт перевіряє,
+  // чи є у користувача активна сесія в Keycloak
+  // (наприклад, якщо він вже логінився в іншій вкладці).
+  // Якщо так, він отриує токени користувача.
+  keycloak.init({ onLoad: 'check-sso' }).then(authenticated => {
+    // Після завершення ініціалізації,
+    // keycloak.js викликає нашу функцію,
+    // передаючи в неї true (якщо вдалося отримати токени) або false
+    updateUI(authenticated);
+  });
+
+  function updateUI(authenticated) {
+    // Показуємо або ховаємо кнопки в залежності від статусу
+    document.getElementById('logoutBtn').style.display = authenticated ? 'inline-block' : 'none';
+    document.getElementById('apiBtn').style.display = authenticated ? 'inline-block' : 'none';
+    document.getElementById('loginBtn').style.display = authenticated ? 'none' : 'inline-block';
+    document.getElementById('status').textContent = authenticated ? 'Аутентифікований' : 'Не аутентифікований';
+    // Якщо користувач увійшов, показуємо вміст його токену
+    document.getElementById('token-info').textContent = authenticated ? JSON.stringify(keycloak.tokenParsed, null, 2) : 'Немає токену.';
+  }
+
+  // 4. Виклик API
+  function callApi() {
+    const apiResponseDiv = document.getElementById('api-response');
+    apiResponseDiv.textContent = 'Виконується запит...';
+    fetch('http://localhost:8080/private', {
+      //Після успішного виконання keycloak.init(),
+      // бібліотека keycloak.js автоматично зберігає отриманий Access Token
+      // всередині свого об'єкта.
+      headers: { 'Authorization': 'Bearer ' + keycloak.token }
+    })
+    .then(response => response.text())
+    .then(data => { apiResponseDiv.textContent = 'Відповідь від сервера: ' + data; })
+    .catch(error => { apiResponseDiv.textContent = 'Помилка: ' + error; });
+  }
+>>>>>>> origin/main
 </script>
 </body>
 </html>
