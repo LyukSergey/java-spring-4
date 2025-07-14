@@ -49,7 +49,7 @@
           resourceserver:
             jwt:
               # ✅ ОБОВ'ЯЗКОВО: Вказуємо на наш новий realm
-              issuer-uri: http://localhost:8180/realms/my-prod-app-realm
+              issuer-uri: http://localhost:8081/realms/my-prod-app-realm
     ```
 
     **Акцент:** Це єдина властивість, потрібна для бекенда, щоб валідувати токени. Він не знає ніяких секретів клієнта.
@@ -164,7 +164,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Prod App Demo</title>
-    <script src="http://localhost:8180/js/keycloak.js"></script>
+    <script src="http://localhost:8081/js/keycloak.js"></script>
     <style> body { font-family: sans-serif; padding: 2em; } button { padding: 10px; margin: 5px; } pre { background-color: #eee; padding: 1em; } </style>
 </head>
 <body>
@@ -182,7 +182,7 @@
 <script>
     // 2. Налаштування клієнта
     const keycloak = new Keycloak({
-        url: 'http://localhost:8180',
+        url: 'http://localhost:8081',
         realm: 'my-prod-app-realm',
         clientId: 'my-webapp-client'
     });
