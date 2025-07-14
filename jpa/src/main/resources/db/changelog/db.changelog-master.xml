@@ -6,6 +6,5 @@
     <include file="/db/changelog/bank.xml"/>
     <include file="/db/changelog/user.xml"/>
     <include file="/db/changelog/test-data.xml"/>
-    <include file="db.changelog/14-01-changelog.xml"/>
 
 </databaseChangeLog>

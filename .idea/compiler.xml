@@ -16,34 +16,38 @@
         <outputRelativeToContentRoot value="true" />
         <module name="L1-sb-profiling-starter" />
       </profile>
-      <profile name="Annotation profile for L1-spring-boot" enabled="true">
+      <profile name="Annotation profile for L1-spring-boot-security" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-        </processorPath>
-        <module name="L1-spring-boot" />
-      </profile>
-      <profile name="Annotation profile for L1-sb-data-jpa" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
         <module name="L1-spring-boot-security" />
+      </profile>
+      <profile name="Annotation profile for l1-spring-security-db" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
         <module name="L1-spring-boot-security-spa-add-new-user" />
-        <module name="L1-sb-profiling-starter-test" />
         <module name="L1-spring-boot-security-spa" />
+        <module name="L1-sb-profiling-starter-test" />
         <module name="L1-sb-data-jpa" />
         <module name="l1-spring-security-db" />
+        <module name="jpa" />
+        <module name="L1-spring-boot" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="jpa2" target="17" />
       <module name="L1-b-keckeloack-demo" target="17" />
       <module name="L1-spring-boot-demo" target="17" />
+      <module name="starter" target="17" />
+      <module name="test-starter" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -58,6 +62,8 @@
       <module name="L1-spring-boot-security-spa-add-new-user" options="-parameters" />
       <module name="L1-spring-boot-security.main" options="-parameters" />
       <module name="L1-spring-boot-security.test" options="-parameters" />
+      <module name="jpa" options="-parameters" />
+      <module name="jpa2" options="-parameters" />
       <module name="l1-spring-security-db" options="-parameters" />
     </option>
   </component>
