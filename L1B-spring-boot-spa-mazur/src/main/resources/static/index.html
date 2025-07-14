@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Prod App Demo</title>
+    <script src="http://localhost:8081/js/keycloak.js"></script>
+    <style> body { font-family: sans-serif; padding: 2em; } button { padding: 10px; margin: 5px; } pre { background-color: #eee; padding: 1em; } </style>
+</head>
+<body>
+<h1>Prod-Ready Демо</h1>
+<div>Статус: <span id="status">Ініціалізація...</span></div>
+<hr>
+<button id="loginBtn" onclick="keycloak.login()">Увійти</button>
+<button id="logoutBtn" onclick="keycloak.logout()">Вийти</button>
+<hr>
+<button id="apiBtn" onclick="callApi()">Викликати приватний ендпоінт (/private)</button>
+<div id="api-response" style="margin-top: 1em;"></div>
+<h3>Токен:</h3>
+<pre id="token-info">Немає токену.</pre>
+
+<script>
+    // 2. Налаштування клієнта
+    const keycloak = new Keycloak({
+        url: 'http://localhost:8180',
+        realm: 'my-prod-app-realm',
+        clientId: 'my-webapp-client'
+    });
+
+    // 3. Ініціалізація
+    keycloak.init({ onLoad: 'check-sso' }).then(authenticated => {
+        updateUI(authenticated);
+    });
+
+    function updateUI(authenticated) {
+        document.getElementById('logoutBtn').style.display = authenticated ? 'inline-block' : 'none';
+        document.getElementById('apiBtn').style.display = authenticated ? 'inline-block' : 'none';
+        document.getElementById('loginBtn').style.display = authenticated ? 'none' : 'inline-block';
+        document.getElementById('status').textContent = authenticated ? 'Аутентифікований' : 'Не аутентифікований';
+        document.getElementById('token-info').textContent = authenticated ? JSON.stringify(keycloak.tokenParsed, null, 2) : 'Немає токену.';
+    }
+
+    // 4. Виклик API
+    function callApi() {
+        const apiResponseDiv = document.getElementById('api-response');
+        apiResponseDiv.textContent = 'Виконується запит...';
+
+        // 🔄 Оновлюємо токен
+        keycloak.updateToken(5).then(function () {
+            fetch('http://localhost:8080/private', {
+                headers: {
+                    'Authorization': 'Bearer ' + keycloak.token
+                }
+            })
+                .then(response => {
+                    if (response.status === 401) throw new Error("401 Unauthorized");
+                    return response.text();
+                })
+                .then(data => { apiResponseDiv.textContent = 'Відповідь від сервера: ' + data; })
+                .catch(error => { apiResponseDiv.textContent = 'Помилка: ' + error; });
+        }).catch(function () {
+            apiResponseDiv.textContent = 'Не вдалося оновити токен. Користувач вийшов?';
+        });
+    }
+
+</script>
+</body>
+</html>
