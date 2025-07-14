@@ -1,0 +1,6 @@
+spring:
+  application:
+  name: vashchyk-starter-test
+
+profiling:
+  enabled: true
