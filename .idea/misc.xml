@@ -13,11 +13,14 @@
         <option value="$PROJECT_DIR$/L1-spring-boot-security-spa-add-new-user/pom.xml" />
         <option value="$PROJECT_DIR$/L1-sb-profiling-starter/pom.xml" />
         <option value="$PROJECT_DIR$/L1-sb-profiling-starter-test/pom.xml" />
+        <option value="$PROJECT_DIR$/dvatri/pom.xml" />
+        <option value="$PROJECT_DIR$/qwerty123/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/L1-spring-boot-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/dvatri/pom.xml" />
       </set>
     </option>
   </component>
