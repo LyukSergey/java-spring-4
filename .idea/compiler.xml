@@ -10,7 +10,7 @@
         </processorPath>
         <module name="L1-spring-boot-security.main" />
       </profile>
-      <profile name="Annotation profile for oleksandr_boot_security" enabled="true">
+      <profile name="Annotation profile for L1-spring-boot-security-spa" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -18,8 +18,8 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
-        <module name="oleksandr_boot_security" />
         <module name="L1-spring-boot-security-spa" />
+        <module name="L1-spring-boot" />
       </profile>
       <profile name="Annotation profile for vashchyk_security_db" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -30,7 +30,7 @@
         </processorPath>
         <module name="vashchyk_security_db" />
         <module name="L1-spring-boot-security" />
-        <module name="L1-spring-boot" />
+        <module name="oleksandr_boot_security" />
         <module name="l1-spring-security-db" />
       </profile>
     </annotationProcessing>
