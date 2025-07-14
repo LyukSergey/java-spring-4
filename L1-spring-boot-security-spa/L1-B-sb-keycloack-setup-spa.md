@@ -182,7 +182,7 @@
 <script>
     // 2. Налаштування клієнта
     const keycloak = new Keycloak({
-        url: 'http://localhost:8180',
+        url: 'http://localhost:8081',
         realm: 'my-prod-app-realm',
         clientId: 'my-webapp-client'
     });
