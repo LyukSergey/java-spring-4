@@ -17,6 +17,8 @@
         <option value="$PROJECT_DIR$/oleksandr_vashchyk/pom.xml" />
         <option value="$PROJECT_DIR$/oleksandr_boot_security/pom.xml" />
         <option value="$PROJECT_DIR$/vashchyk_security_db/pom.xml" />
+        <option value="$PROJECT_DIR$/vashchyk-starter/pom.xml" />
+        <option value="$PROJECT_DIR$/vashchyk-starter-test/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
