@@ -13,6 +13,7 @@ public class ProfilingAutoConfiguration {
 
     @Bean
     public ProfilingBeanPostProcessor profilingBeanPostProcessor() {
+
         return new ProfilingBeanPostProcessor();
     }
 }

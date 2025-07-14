@@ -11,6 +11,7 @@ public class ProfilingBeanPostProcessor implements BeanPostProcessor {
 
     private Map<String, Class<?>> beansToProfile = new HashMap<>();
 
+
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         if (bean.getClass().isAnnotationPresent(Profiling.class)) {
