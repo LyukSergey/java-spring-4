@@ -1,0 +1,19 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: L1-spring-boot-security
+      POSTGRES_USER: us
+      POSTGRES_PASSWORD: us
+    ports:
+      - "5432:5432"
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:22.0.5
+    command: start-dev
+    environment:
+      KEYCLOAK_ADMIN: us
+      KEYCLOAK_ADMIN_PASSWORD: us
+    ports:
+      - "8081:8080"
