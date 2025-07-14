@@ -11,4 +11,7 @@ public interface BankManagementService {
     void deleteUser(Long userId);
 
     List<UserDto> getUsersByBank(Long bankId);
+
+    // ✅ ДОДАНО ДЛЯ ЗАВДАННЯ
+    List<User> getUsersByBankRaw(Long bankId);
 }

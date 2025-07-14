@@ -165,3 +165,19 @@
     (замініть `1` на ID користувача, якого хочете видалити).
 
 3.  **Очікуваний результат:** Команда виконається без помилок і поверне пусту відповідь зі статусом 204. Щоб переконатися, що користувач видалений, ви можете знову виконати GET-запит з першого завдання і побачити, що цього користувача більше немає у списку.
+
+Додайте файли до індексу git:
+git add mvnw mvnw.cmd .mvn/
+
+Зробіть коміт:
+git commit -m "Add Maven Wrapper files"
+
+Відправте зміни на сервер:
+git push
+
+
+git config --global user.name "Dubovyk Vladyslav"
+git config --global user.email "wvladowv@gmail.com"
+git commit -m "Add Maven Wrapper files"
+git push --set-upstream origin feature/vladyslav_dubovyk
+git push

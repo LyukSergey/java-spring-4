@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 @RestController
 @RequestMapping("/users") // Базовий шлях для всіх ендпоінтів
@@ -21,4 +22,10 @@ public class UserController {
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
+    // ✅ ДОДАНО ДЛЯ ЗАВДАННЯ
+    @DeleteMapping("/{userId}")
+    public ResponseEntity<Void> deleteUser(@org.springframework.web.bind.annotation.PathVariable Long userId) {
+        userService.deleteUser(userId);
+        return ResponseEntity.noContent().build();
+    }
 }

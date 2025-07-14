@@ -7,4 +7,6 @@ public interface UserService {
 
     List<UserDto> getAllUsers();
 
+    // ✅ ДОДАНО ДЛЯ ЗАВДАННЯ
+    void deleteUser(Long userId);
 }

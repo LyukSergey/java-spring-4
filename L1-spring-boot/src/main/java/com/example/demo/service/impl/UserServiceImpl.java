@@ -4,7 +4,6 @@ import com.example.demo.dto.UserDto;
 import com.example.demo.entity.User;
 import com.example.demo.mapper.UserMapper;
 import com.example.demo.repository.UserRepository;
-import com.example.demo.service.BankManagementService;
 import com.example.demo.service.UserService;
 import jakarta.transaction.Transactional;
 import java.util.List;
@@ -25,5 +24,11 @@ public class UserServiceImpl implements UserService {
         return users.stream()
                 .map(userMapper::toDto)
                 .toList();
+    }
+    // ✅ ДОДАНО ДЛЯ ЗАВДАННЯ
+    @Override
+    @Transactional
+    public void deleteUser(Long userId) {
+        userRepository.deleteById(userId);
     }
 }

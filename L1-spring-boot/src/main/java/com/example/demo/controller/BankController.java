@@ -36,6 +36,12 @@ public class BankController {
         return ResponseEntity.noContent().build();
     }
 
+    // ✅ ДОДАНО ДЛЯ ЗАВДАННЯ
+    @GetMapping("/{bankId}/users/raw")
+    public ResponseEntity<List<User>> getUsersByBankRaw(@PathVariable Long bankId) {
+        return ResponseEntity.ok(bankService.getUsersByBankRaw(bankId));
+    }
+
     @GetMapping("/{bankId}/users")
     public ResponseEntity<List<UserDto>> getUsersByBank(@PathVariable Long bankId) {
         return ResponseEntity.ok(bankService.getUsersByBank(bankId));
