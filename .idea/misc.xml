@@ -9,6 +9,8 @@
         <option value="$PROJECT_DIR$/L1-spring-boot-demo/pom.xml" />
         <option value="$PROJECT_DIR$/L1-spring-boot-security/pom.xml" />
         <option value="$PROJECT_DIR$/L1-spring-boot-security-spa/pom.xml" />
+        <option value="$PROJECT_DIR$/L1-sb-profiling-starter/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/L1-sb-profiling-starter/MyStartert/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
