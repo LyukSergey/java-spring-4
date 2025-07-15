@@ -36,13 +36,9 @@ public class BankManagementServiceImpl implements BankManagementService {
     @Transactional
     public List<UserDto> getUsersByBank(Long bankId) {
         final List<User> users = userRepository.findAllByBankId(bankId);
-        return users.stream()
-<<<<<<< HEAD
-                .map(user -> userMapper.toDto(user))
-=======
-                .map(userMapper::toDto)
->>>>>>> 1476f90535505e67bbf6f24bf48a68f14e53bcd9
-                .toList();
+return users.stream()
+        .map(userMapper::toDto)
+        .toList();
     }
 
     @Override

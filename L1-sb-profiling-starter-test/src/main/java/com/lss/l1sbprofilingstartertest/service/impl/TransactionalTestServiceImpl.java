@@ -10,6 +10,12 @@ public class TransactionalTestServiceImpl implements TransactionalTestService {
     @Override
     @Transactional
     public void transactionalTestMethod() {
-        System.out.println("Transaction method executed.");
+        System.out.println(">>> [РЕАЛЬНИЙ ОБ'ЄКТ] Початок основного методу.");
+        this.helperMethod(); 
+        System.out.println(">>> [РЕАЛЬНИЙ ОБ'ЄКТ] Кінець основного методу.");
+    }
+
+    public void helperMethod() {
+        System.out.println(">>> [РЕАЛЬНИЙ ОБ'ЄКТ] Виклик допоміжного методу.");
     }
 }
