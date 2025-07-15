@@ -28,4 +28,18 @@ class FleetControllerIT extends BaseControllerIntegrationTest {
                 .andExpect(jsonPath("$[0].status").value(mission.getStatus().name()));
     }
 
+    @Test
+    @SneakyThrows
+    void getMissionByIdShouldReturnResourceNotFoundIfMissionIsNotFound() {
+        // Given
+        final long notExistingMissionId = 1000L;
+        final String expectedMessage = String.format("Mission with id %s was not found", notExistingMissionId);
+
+        // When, Then
+        mockMvc.perform(get("/starships/missions/{missionId}", notExistingMissionId))
+                .andExpect(status().isNotFound())
+                .andDo(MockMvcResultHandlers.print())
+                .andExpect(jsonPath("$.message").value(expectedMessage));
+    }
+
 }
