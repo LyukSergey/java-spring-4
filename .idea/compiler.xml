@@ -20,7 +20,7 @@
         <module name="L1-spring-boot-security-spa" />
         <module name="L1-spring-boot" />
       </profile>
-      <profile name="Annotation profile for vashchyk_security_db" enabled="true">
+      <profile name="Annotation profile for vashchyk-data-project-jpa" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -36,6 +36,7 @@
         <module name="L1-sb-profiling-starter-test" />
         <module name="L1-sb-data-jpa" />
         <module name="l1-spring-security-db" />
+        <module name="vashchyk-data-project-jpa" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -53,6 +54,7 @@
       <module name="L1-spring-boot-security-spa-add-new-user" options="-parameters" />
       <module name="l1-spring-security-db" options="-parameters" />
       <module name="oleksandr_boot_security" options="-parameters" />
+      <module name="vashchyk-data-project-jpa" options="-parameters" />
       <module name="vashchyk-starter" options="-parameters" />
       <module name="vashchyk-starter-test" options="-parameters" />
       <module name="vashchyk_data_jpa" options="-parameters" />
