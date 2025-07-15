@@ -31,7 +31,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers("/register").permitAll()
-                        .requestMatchers("/public").permitAll()
+                        .requestMatchers("/api/register").permitAll()
+                                .requestMatchers("/public").permitAll()
                         // ЗАХИСТ ЕНДПОІНТУ: Вимагаємо нашу нову роль "app_user"
                         .requestMatchers("/private").hasRole("app_user")
                         .anyRequest().authenticated()

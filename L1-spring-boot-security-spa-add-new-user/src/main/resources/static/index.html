@@ -21,119 +21,149 @@
   </style>
 </head>
 <body>
-<h1>Демо-додаток з Keycloak</h1>
-<div>Статус: <span id="status" style="font-weight: bold;">Ініціалізація...</span></div>
+< <h1>Prod-Ready Демо</h1>
+<div>Статус: <span id="status">Ініціалізація...</span></div>
+<hr>
+<button id="loginBtn" onclick="keycloak.login()">Увійти</button>
+<a href="#" id="show-register-link" style="margin-left: 10px;">Зареєструватися</a>
+<button id="logoutBtn" onclick="keycloak.logout()">Вийти</button>
 <hr>
 
-<div id="logged-out-zone">
-  <div class="container">
-    <h3>Вхід та Реєстрація</h3>
-    <button id="loginBtn" onclick="keycloak.login()">Увійти через Keycloak</button>
-    <p>Немає акаунту? <a href="#" id="show-register-link">Створити зараз</a>.</p>
-    <form id="register-form" class="hidden">
-      <h4>Новий акаунт</h4>
-      <input type="text" id="reg-username" placeholder="Бажаний логін" required>
-      <input type="email" id="reg-email" placeholder="Ваш Email" required>
-      <input type="password" id="reg-password" placeholder="Пароль" required>
-      <button type="submit">Зареєструватися</button>
-    </form>
-  </div>
+<div id="register-zone" style="display:none; margin-bottom: 20px;">
+  <h3>Створити новий акаунт</h3>
+  <form id="register-form">
+    <input type="text" id="reg-username" placeholder="Логін" required>
+    <input type="password" id="reg-password" placeholder="Пароль" required>
+    <button type="submit">Зареєструватися</button>
+  </form>
 </div>
 
-<div id="logged-in-zone" class="hidden">
-  <h3>Приватна зона</h3>
-  <button id="logoutBtn" onclick="keycloak.logout()">Вийти</button>
-  <button id="apiBtn" onclick="callApi()">Викликати приватний ендпоінт</button>
-  <h3>Ваш токен:</h3>
-  <pre id="token-info">Немає токену.</pre>
-</div>
-
-<div id="response-display"></div>
+<button id="apiBtn" onclick="callApi()">Викликати приватний ендпоінт (/private)</button>
+<div id="api-response" style="margin-top: 1em; font-weight: bold;"></div>
+<h3>Токен:</h3>
+<pre id="token-info">Немає токену.</pre>
 
 <script>
-  const keycloakConfig = {
-    url: 'http://localhost:8081', // Перевірте ваш порт Keycloak
-    realm: 'my-prod-app-realm',    // Перевірте назву вашого realm
-    clientId: 'my-webapp-client'   // ID вашого ПУБЛІЧНОГО клієнта для фронтенду
-  };
-  const keycloak = new Keycloak(keycloakConfig);
-  const apiBaseUrl = 'http://localhost:8080'; // Адреса вашого бекенду
-
-  const loggedInZone = document.getElementById('logged-in-zone');
-  const loggedOutZone = document.getElementById('logged-out-zone');
-  const statusDiv = document.getElementById('status');
-  const tokenInfoPre = document.getElementById('token-info');
-  const responseDisplayDiv = document.getElementById('response-display');
+  const registerZone = document.getElementById('register-zone');
   const registerForm = document.getElementById('register-form');
   const showRegisterLink = document.getElementById('show-register-link');
+  const apiResponseDiv = document.getElementById('api-response');
 
-  // Ініціалізація Keycloak
-  keycloak.init({ onLoad: 'check-sso' }).then(authenticated => {
-    updateUI(authenticated);
-  });
-
-  function updateUI(authenticated) {
-    loggedInZone.classList.toggle('hidden', !authenticated);
-    loggedOutZone.classList.toggle('hidden', authenticated);
-    statusDiv.textContent = authenticated ? `Аутентифікований як ${keycloak.tokenParsed.preferred_username}` : 'Не аутентифікований';
-    tokenInfoPre.textContent = authenticated ? JSON.stringify(keycloak.tokenParsed, null, 2) : 'Немає токену.';
-    responseDisplayDiv.textContent = '';
-    responseDisplayDiv.className = 'response-display';
-  }
-
-  // Показ/приховування форми реєстрації
   showRegisterLink.addEventListener('click', (e) => {
     e.preventDefault();
-    registerForm.classList.toggle('hidden');
+    registerZone.style.display = registerZone.style.display === 'none' ? 'block' : 'none';
   });
 
-  // Обробник для форми реєстрації
   registerForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    displayResponse('Реєструємо користувача...', 'info');
+    apiResponseDiv.textContent = 'Реєструємо...';
 
-    const username = document.getElementById('reg-username').value;
-    const email = document.getElementById('reg-email').value;
-    const password = document.getElementById('reg-password').value;
+    const username = registerForm['reg-username'].value;
+    const password = registerForm['reg-password'].value;
 
     try {
-      const response = await fetch(`${apiBaseUrl}/register`, {
+      const response = await fetch('http://localhost:8080/register', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, email, password })
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({username, password})
       });
 
       const responseText = await response.text();
       if (!response.ok) throw new Error(responseText);
 
-      displayResponse(responseText, 'success');
-      registerForm.reset();
-      registerForm.classList.add('hidden');
-    } catch (error) {
-      displayResponse(`Помилка реєстрації: ${error.message}`, 'error');
+      apiResponseDiv.style.color = 'green';
+      apiResponseDiv.textContent = responseText;
+      registerZone.style.display = 'none';
+    } catch (err) {
+      apiResponseDiv.style.color = 'red';
+      apiResponseDiv.textContent = 'Помилка реєстрації: ' + err.message;
     }
-  });
+    const keycloakConfig = {
+      url: 'http://localhost:8081', // Перевірте ваш порт Keycloak
+      realm: 'my-prod-app-realm',    // Перевірте назву вашого realm
+      clientId: 'my-webapp-client'   // ID вашого ПУБЛІЧНОГО клієнта для фронтенду
+    };
+    const keycloak = new Keycloak(keycloakConfig);
+    const apiBaseUrl = 'http://localhost:8080'; // Адреса вашого бекенду
 
-  // Функція для виклику захищеного API (залишається без змін)
-  async function callApi() {
-    displayResponse('Виконується запит до захищеного API...', 'info');
-    try {
-      const response = await fetch(`${apiBaseUrl}/private`, {
-        headers: { 'Authorization': 'Bearer ' + keycloak.token }
-      });
-      if (!response.ok) throw new Error(`Помилка HTTP: ${response.status} ${response.statusText}`);
-      const data = await response.text();
-      displayResponse(`Відповідь від сервера: ${data}`, 'success');
-    } catch (error) {
-      displayResponse(`Помилка: ${error.message}`, 'error');
+    const loggedInZone = document.getElementById('logged-in-zone');
+    const loggedOutZone = document.getElementById('logged-out-zone');
+    const statusDiv = document.getElementById('status');
+    const tokenInfoPre = document.getElementById('token-info');
+    const responseDisplayDiv = document.getElementById('response-display');
+    const registerForm = document.getElementById('register-form');
+    const showRegisterLink = document.getElementById('show-register-link');
+
+    // Ініціалізація Keycloak
+    keycloak.init({onLoad: 'check-sso'}).then(authenticated => {
+      updateUI(authenticated);
+    });
+
+    function updateUI(authenticated) {
+      loggedInZone.classList.toggle('hidden', !authenticated);
+      loggedOutZone.classList.toggle('hidden', authenticated);
+      statusDiv.textContent = authenticated ? `Аутентифікований як ${keycloak.tokenParsed.preferred_username}` : 'Не аутентифікований';
+      tokenInfoPre.textContent = authenticated ? JSON.stringify(keycloak.tokenParsed, null, 2) : 'Немає токену.';
+      responseDisplayDiv.textContent = '';
+      responseDisplayDiv.className = 'response-display';
+      document.getElementById('show-register-link').style.display = authenticated ? 'none' : 'inline-block';
     }
-  }
 
-  // Допоміжна функція для відображення повідомлень
-  function displayResponse(message, type) {
-    responseDisplayDiv.textContent = message;
-    responseDisplayDiv.className = `response-display ${type}`;
-  }
+    // Показ/приховування форми реєстрації
+    showRegisterLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      registerForm.classList.toggle('hidden');
+    });
+
+    // Обробник для форми реєстрації
+    registerForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      displayResponse('Реєструємо користувача...', 'info');
+
+      const username = document.getElementById('reg-username').value;
+      const email = document.getElementById('reg-email').value;
+      const password = document.getElementById('reg-password').value;
+
+      try {
+        const response = await fetch(`${apiBaseUrl}/register`, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({username, email, password})
+        });
+
+        const responseText = await response.text();
+        if (!response.ok) throw new Error(responseText);
+
+        displayResponse(responseText, 'success');
+        registerForm.reset();
+        registerForm.classList.add('hidden');
+      } catch (error) {
+        displayResponse(`Помилка реєстрації: ${error.message}`, 'error');
+      }
+    });
+
+    // Функція для виклику захищеного API (залишається без змін)
+    async function callApi() {
+      displayResponse('Виконується запит до захищеного API...', 'info');
+      try {
+        const response = await fetch(`${apiBaseUrl}/private`, {
+          headers: {'Authorization': 'Bearer ' + keycloak.token}
+        });
+        if (!response.ok) throw new Error(`Помилка HTTP: ${response.status} ${response.statusText}`);
+        const data = await response.text();
+        displayResponse(`Відповідь від сервера: ${data}`, 'success');
+      } catch (error) {
+        displayResponse(`Помилка: ${error.message}`, 'error');
+      }
+    }
+
+    // Допоміжна функція для відображення повідомлень
+    function displayResponse(message, type) {
+      responseDisplayDiv.textContent = message;
+      responseDisplayDiv.className = `response-display ${type}`
+    }
+
+
 </script>
 </body>
 </html>

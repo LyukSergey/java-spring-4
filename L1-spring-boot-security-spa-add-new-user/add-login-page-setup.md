@@ -50,7 +50,7 @@
 #Конфігурація для підключення до Keycloak Admin API
 keycloak:
   admin-client:
-    server-url: http://localhost:8180
+    server-url: http://localhost:8081
     realm: my-prod-app-realm
     # Дані конфіденційного клієнта, який ми щойно створили
     client-id: backend-admin-client

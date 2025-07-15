@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 
 public class ProfilingBeanPostProcessor implements BeanPostProcessor {
 
