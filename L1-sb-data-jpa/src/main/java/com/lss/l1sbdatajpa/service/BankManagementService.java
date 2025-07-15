@@ -10,4 +10,6 @@ public interface BankManagementService {
     void deleteUser(Long userId);
 
     List<UserDto> getUsersByBank(Long bankId);
+
+    UserDto getMaxSurnameLength(Long bankId, boolean withStream);
 }
