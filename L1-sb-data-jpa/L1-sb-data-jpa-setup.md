@@ -311,3 +311,15 @@ public class BankController {
 Як знайти користувача з найдовшим прізвищем? 
 Можна витягнути всіх користувачів банку і відсортувати їх у Java-коді. 
 Але це неефективно! Краще зробити це на рівні бази даних.
+
+SELECT
+b.name AS bank_name,
+COUNT(u.id) AS user_count
+FROM
+users u
+JOIN
+bank b ON u.bank_id = b.id
+GROUP BY
+b.name
+ORDER BY
+user_count DESC;
