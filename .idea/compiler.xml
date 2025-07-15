@@ -17,7 +17,7 @@
         <module name="L1-sb-profiling-starter" />
         <module name="L1-sb-profiling-starter-mazur" />
       </profile>
-      <profile name="Annotation profile for L1-sb-profiling-starter-test-mazur" enabled="true">
+      <profile name="Annotation profile for l1-spring-security-db" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -33,6 +33,7 @@
         <module name="L1-sb-profiling-starter-test-mazur" />
         <module name="L1B-spring-boot-spa-mazur" />
         <module name="L1-spring-boot" />
+        <module name="L1-sb-data-jpa-mazur" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -44,6 +45,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="L1-sb-data-jpa" options="-parameters" />
+      <module name="L1-sb-data-jpa-mazur" options="-parameters" />
       <module name="L1-sb-data-starter-mazur" options="-parameters" />
       <module name="L1-sb-profiling-starter" options="-parameters" />
       <module name="L1-sb-profiling-starter-mazur" options="-parameters" />
