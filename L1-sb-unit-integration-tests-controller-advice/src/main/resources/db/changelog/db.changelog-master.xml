@@ -6,6 +6,6 @@
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
     <include file="/db/changelog/01-create-tables.xml"/>
-    <include file="/db/changelog/02-data.xml"/>
+<!--    <include file="/db/changelog/02-data.xml"/>-->
 
 </databaseChangeLog>
