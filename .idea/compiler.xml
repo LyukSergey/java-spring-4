@@ -20,6 +20,13 @@
         </processorPath>
         <module name="L1-spring-boot" />
       </profile>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="demo" />
+        <module name="MyStartert" />
+      </profile>
       <profile name="Annotation profile for L1-spring-boot-security-spa" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -30,16 +37,11 @@
         <module name="L1-spring-boot-security-spa" />
         <module name="L1-spring-boot-security" />
       </profile>
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="demo" />
-        <module name="MyStartert" />
-      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="demo" target="17" />
       <module name="L1-spring-boot-demo" target="17" />
+      <module name="MyStartert" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
