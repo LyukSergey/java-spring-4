@@ -15,8 +15,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="L1-sb-profiling-starter" />
-        <module name="app-data" />
         <module name="app-main" />
+        <module name="app-maven-plugin" />
+        <module name="app-data" />
       </profile>
       <profile name="Annotation profile for l1-spring-security-db" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -53,6 +54,7 @@
       <module name="L1-spring-boot-security.test" options="-parameters" />
       <module name="app-data" options="-parameters" />
       <module name="app-main" options="-parameters" />
+      <module name="app-maven-plugin" options="-parameters" />
       <module name="l1-spring-security-db" options="-parameters" />
       <module name="l1b-maven" options="" />
     </option>
