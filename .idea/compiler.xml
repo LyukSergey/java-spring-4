@@ -18,8 +18,9 @@
         <module name="app-main" />
         <module name="app-maven-plugin" />
         <module name="app-data" />
+        <module name="L1-sb-unit-integration-tests-controller-advice" />
       </profile>
-      <profile name="Annotation profile for l1-spring-security-db" enabled="true">
+      <profile name="Annotation profile for L1-sb-unit-integration-tests-controller-advice" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -45,6 +46,7 @@
       <module name="L1-sb-data-jpa" options="-parameters" />
       <module name="L1-sb-profiling-starter" options="-parameters" />
       <module name="L1-sb-profiling-starter-test" options="-parameters" />
+      <module name="L1-sb-unit-integration-tests-controller-advice" options="-parameters" />
       <module name="L1-spring-boot" options="-parameters" />
       <module name="L1-spring-boot-demo" options="-parameters" />
       <module name="L1-spring-boot-security" options="-parameters" />

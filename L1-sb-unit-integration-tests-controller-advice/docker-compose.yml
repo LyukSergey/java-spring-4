@@ -3,7 +3,7 @@ services:
   postgres:
     image: postgres:14
     environment:
-      POSTGRES_DB: l1-spring-boot_db
+      POSTGRES_DB: l1-sb-testing
       POSTGRES_USER: demo_user
       POSTGRES_PASSWORD: demo_pass
     ports:
