@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/PZ-statrers" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
@@ -17,12 +20,19 @@
         <option value="$PROJECT_DIR$/PZ_2.3/pom.xml" />
         <option value="$PROJECT_DIR$/Haraviuk OV/PZ2.3/pom.xml" />
         <option value="$PROJECT_DIR$/PZ2-3/pom.xml" />
+        <option value="$PROJECT_DIR$/PZ-starter/pom.xml" />
+        <option value="$PROJECT_DIR$/PZ-starter-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/PZ-starter-test/pom.xml" />
+        <option value="$PROJECT_DIR$/PZ-statrers/PZ-starter2_0/pom.xml" />
+        <option value="$PROJECT_DIR$/PZ-start/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/Haraviuk OV/PZ2.3/pom.xml" />
         <option value="$PROJECT_DIR$/L1-spring-boot-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/PZ-starter-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/PZ-starter/pom.xml" />
         <option value="$PROJECT_DIR$/PZ_2.3/pom.xml" />
       </set>
     </option>

@@ -1,7 +1,8 @@
-package com.lss.l1sbprofilingstartertest.controller;
+package com.lss.l1sbprofilingstartertest.service.controller;
 
-import com.lss.l1sbprofilingstartertest.service.MyService;
-import lombok.RequiredArgsConstructor;
+
+
+import com.lss.l1sbprofilingstartertest.service.service.MyService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

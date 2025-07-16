@@ -8,25 +8,16 @@
         <processorPath useClasspath="false">
           <entry name="$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.38/57f8f5e02e92a30fd21b80cbd426a4172b5f8e29/lombok-1.18.38.jar" />
         </processorPath>
-        <module name="L1-spring-boot-security.main" />
-      </profile>
-      <profile name="Annotation profile for Haraviuk OV" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-        </processorPath>
-        <module name="l1-spring-security-db" />
-        <module name="L1-spring-boot" />
+        <module name="PZ-statrers.main" />
       </profile>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="L1-sb-profiling-starter" />
+        <module name="PZ-start" />
       </profile>
-      <profile name="Annotation profile for PZ2-3" enabled="true">
+      <profile name="Annotation profile for PZ-starter-test" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -37,12 +28,20 @@
         <module name="L1-spring-boot-security-spa-add-new-user" />
         <module name="L1-spring-boot-security-spa" />
         <module name="Haraviuk" />
-        <module name="PZ2-3" />
+        <module name="PZ-starter-test" />
+        <module name="l1-spring-security-db" />
+        <module name="L1-spring-boot" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="L1-sb-profiling-starter-test" target="17" />
       <module name="L1-spring-boot-demo" target="17" />
       <module name="PZ-2_3" target="17" />
+      <module name="PZ-starter" target="17" />
+      <module name="PZ-starter-demo" target="17" />
+      <module name="PZ-starter20" target="17" />
+      <module name="PZ-statrers" target="17" />
+      <module name="PZ2-3" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -58,6 +57,11 @@
       <module name="L1-spring-boot-security.main" options="-parameters" />
       <module name="L1-spring-boot-security.test" options="-parameters" />
       <module name="PZ-2_3" options="-parameters" />
+      <module name="PZ-start" options="-parameters" />
+      <module name="PZ-starter" options="-parameters" />
+      <module name="PZ-starter-demo" options="-parameters" />
+      <module name="PZ-starter-test" options="-parameters" />
+      <module name="PZ-starter20" options="-parameters" />
       <module name="PZ2-3" options="-parameters" />
       <module name="l1-spring-security-db" options="-parameters" />
     </option>

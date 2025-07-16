@@ -4,3 +4,4 @@ public interface MyService {
 
     void doWork();
 }
+
