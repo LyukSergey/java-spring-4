@@ -15,6 +15,12 @@
         <option value="$PROJECT_DIR$/pz2_3/pom.xml" />
         <option value="$PROJECT_DIR$/pz-starter/pom.xml" />
         <option value="$PROJECT_DIR$/pz-starter-test/pom.xml" />
+        <option value="$PROJECT_DIR$/L1-sb-profiling-starter/pom.xml" />
+        <option value="$PROJECT_DIR$/L1-sb-profiling-starter-test/pom.xml" />
+        <option value="$PROJECT_DIR$/L1-sb-data-jpa/pom.xml" />
+        <option value="$PROJECT_DIR$/l1b-maven/pom.xml" />
+        <option value="$PROJECT_DIR$/l1b-maven/app-main/pom.xml" />
+        <option value="$PROJECT_DIR$/L1-sb-unit-integration-tests-controller-advice/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
