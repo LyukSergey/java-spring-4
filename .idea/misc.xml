@@ -13,6 +13,8 @@
         <option value="$PROJECT_DIR$/L1-spring-boot-security-spa-add-new-user/pom.xml" />
         <option value="$PROJECT_DIR$/L1-spring-boot-security-spa-add-new-user/pz2_3/pom.xml" />
         <option value="$PROJECT_DIR$/pz2_3/pom.xml" />
+        <option value="$PROJECT_DIR$/pz-starter/pom.xml" />
+        <option value="$PROJECT_DIR$/pz-starter-test/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
