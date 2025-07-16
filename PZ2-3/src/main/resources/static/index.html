@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Spring Security & Keycloak Demo</title>
+  <script src="http://localhost:8081/js/keycloak.js"></script>
+  <style>
+    .reg{background-color: #007bff }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 2em; max-width: 900px; margin: auto; background-color: #f8f9fa; color: #343a40; }
+    button { padding: 10px 15px; font-size: 16px; cursor: pointer; border: none; border-radius: 5px; margin: 5px 0; color: white; transition: background-color 0.2s ease; }
+    pre { background-color: #e9ecef; padding: 1em; white-space: pre-wrap; word-wrap: break-word; border-radius: 5px; border: 1px solid #dee2e6; }
+    .hidden { display: none; }
+    .container { border: 1px solid #dee2e6; padding: 20px; margin-top: 15px; border-radius: 8px; background-color: white; }
+    input { display: block; padding: 10px; margin-bottom: 10px; width: 95%; font-size: 16px; border: 1px solid #ced4da; border-radius: 4px; }
+    h1, h2, h3 { color: #212529; }
+    #loginBtn { background-color: #28a745; }
+    #logoutBtn { background-color: #dc3545; }
+    #apiBtn { background-color: #007bff; }
+    .response-display { margin-top: 15px; font-weight: bold; padding: 10px; border-radius: 5px; }
+    .success { color: #155724; background-color: #d4edda; border: 1px solid #c3e6cb; }
+    .error { color: #721c24; background-color: #f8d7da; border: 1px solid #f5c6cb; }
+  </style>
+</head>
+<body>
+<h1>Демо-додаток з Keycloak</h1>
+<div>Статус: <span id="status" style="font-weight: bold;">Ініціалізація...</span></div>
+<hr>
+
+<div id="logged-out-zone">
+  <div class="container">
+    <h3>Вхід та Реєстрація</h3>
+    <button id="loginBtn" onclick="keycloak.login()">Увійти через Keycloak</button>
+    <p>Немає акаунту? <a href="#" id="show-register-link">Створити зараз</a>.</p>
+    <form id="register-form" class="hidden">
+      <h4>Новий акаунт</h4>
+      <input type="text" id="reg-username" placeholder="Бажаний логін" required>
+      <input type="email" id="reg-email" placeholder="Ваш Email" required>
+      <input type="password" id="reg-password" placeholder="Пароль" required>
+      <button class = "reg"type="submit">Зареєструватися</button>
+    </form>
+  </div>
+</div>
+
+<div id="logged-in-zone" class="hidden">
+  <h3>Приватна зона</h3>
+  <button id="logoutBtn" onclick="keycloak.logout()">Вийти</button>
+  <button id="apiBtn" onclick="callApi()">Викликати приватний ендпоінт</button>
+  <h3>Ваш токен:</h3>
+  <pre id="token-info">Немає токену.</pre>
+</div>
+
+<div id="response-display"></div>
+
+<script>
+  const keycloakConfig = {
+    url: 'http://localhost:8081', // Перевірте ваш порт Keycloak
+    realm: 'my-prod-app-realm',    // Перевірте назву вашого realm
+    clientId: 'my-webapp-client'   // ID вашого ПУБЛІЧНОГО клієнта для фронтенду
+  };
+  const keycloak = new Keycloak(keycloakConfig);
+  const apiBaseUrl = 'http://localhost:8080'; // Адреса вашого бекенду
+
+  const loggedInZone = document.getElementById('logged-in-zone');
+  const loggedOutZone = document.getElementById('logged-out-zone');
+  const statusDiv = document.getElementById('status');
+  const tokenInfoPre = document.getElementById('token-info');
+  const responseDisplayDiv = document.getElementById('response-display');
+  const registerForm = document.getElementById('register-form');
+  const showRegisterLink = document.getElementById('show-register-link');
+
+  // Ініціалізація Keycloak
+  keycloak.init({ onLoad: 'check-sso' }).then(authenticated => {
+    updateUI(authenticated);
+  });
+
+  function updateUI(authenticated) {
+    loggedInZone.classList.toggle('hidden', !authenticated);
+    loggedOutZone.classList.toggle('hidden', authenticated);
+    statusDiv.textContent = authenticated ? `Аутентифікований як ${keycloak.tokenParsed.preferred_username}` : 'Не аутентифікований';
+    tokenInfoPre.textContent = authenticated ? JSON.stringify(keycloak.tokenParsed, null, 2) : 'Немає токену.';
+    responseDisplayDiv.textContent = '';
+    responseDisplayDiv.className = 'response-display';
+  }
+
+  // Показ/приховування форми реєстрації
+  showRegisterLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    registerForm.classList.toggle('hidden');
+  });
+
+  // Обробник для форми реєстрації
+  registerForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    displayResponse('Реєструємо користувача...', 'info');
+
+    const username = document.getElementById('reg-username').value;
+    const email = document.getElementById('reg-email').value;
+    const password = document.getElementById('reg-password').value;
+
+    try {
+      const response = await fetch(`${apiBaseUrl}/register`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, email, password })
+      });
+
+      const responseText = await response.text();
+      if (!response.ok) throw new Error(responseText);
+
+      displayResponse(responseText, 'success');
+      registerForm.reset();
+      registerForm.classList.add('hidden');
+    } catch (error) {
+      displayResponse(`Помилка реєстрації: ${error.message}`, 'error');
+    }
+  });
+
+  // Функція для виклику захищеного API (залишається без змін)
+  async function callApi() {
+    displayResponse('Виконується запит до захищеного API...', 'info');
+    try {
+      const response = await fetch(`${apiBaseUrl}/private`, {
+        headers: { 'Authorization': 'Bearer ' + keycloak.token }
+      });
+      if (!response.ok) throw new Error(`Помилка HTTP: ${response.status} ${response.statusText}`);
+      const data = await response.text();
+      displayResponse(`Відповідь від сервера: ${data}`, 'success');
+    } catch (error) {
+      displayResponse(`Помилка: ${error.message}`, 'error');
+    }
+  }
+
+  // Допоміжна функція для відображення повідомлень
+  function displayResponse(message, type) {
+    responseDisplayDiv.textContent = message;
+    responseDisplayDiv.className = `response-display ${type}`;
+  }
+</script>
+</body>
+</html>

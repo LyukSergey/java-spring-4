@@ -1,9 +1,7 @@
-package com.lss.l1springbootsecurityspaaddnewuser.service;
+package com.example.pz23;
 
-import com.lss.l1springbootsecurityspaaddnewuser.config.properties.KeycloakProperties;
+import com.example.pz23.KeycloakProperties;
 import jakarta.ws.rs.core.Response;
-import java.util.List;
-import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.keycloak.admin.client.Keycloak;
@@ -12,15 +10,32 @@ import org.keycloak.admin.client.resource.UsersResource;
 import org.keycloak.representations.idm.CredentialRepresentation;
 import org.keycloak.representations.idm.RoleRepresentation;
 import org.keycloak.representations.idm.UserRepresentation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
-@RequiredArgsConstructor
+
 public class RegistrationService {
 
     private final KeycloakProperties keycloakProperties;
+
+    public RegistrationService(KeycloakProperties keycloakProperties, Keycloak keycloak) {
+        this.keycloakProperties = keycloakProperties;
+        this.keycloak = keycloak;
+    }
+
     private final Keycloak keycloak;
+
+
+    private static final Logger log = LoggerFactory.getLogger(RegistrationService.class);
+    public void register() {
+        log.info("User registered"); // ✔️ тепер працює
+    }
 
     public void registerNewUser(String username, String password, String email) {
 
@@ -38,7 +53,7 @@ public class RegistrationService {
     }
 
     private static void getUserRoles(UsersResource usersResource, String newUserId,
-            String username, RoleRepresentation defaultRole) {
+                                     String username, RoleRepresentation defaultRole) {
         try {
             usersResource.get(newUserId)
                     .roles()
@@ -51,7 +66,7 @@ public class RegistrationService {
     }
 
     private static Optional<UserRepresentation> createNewUserInKeycloak(String username, UsersResource usersResource,
-            UserRepresentation user) {
+                                                                        UserRepresentation user) {
         try (Response response = usersResource.create(user)) {
             if (response.getStatus() != 201) {
                 String errorMessage = response.readEntity(String.class);

@@ -1,14 +1,15 @@
-package com.lss.l1springbootsecurityspaaddnewuser.config;
+package com.example.pz23;
 
-import com.lss.l1springbootsecurityspaaddnewuser.config.properties.KeycloakProperties;
+import com.example.pz23.KeycloakProperties;
 import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.KeycloakBuilder;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 @Configuration
-@EnableWebSecurity
+@EnableConfigurationProperties(KeycloakProperties.class)
 public class KeycloakConfig {
 
     @Bean

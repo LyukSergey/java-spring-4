@@ -25,26 +25,24 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="L1-sb-profiling-starter" />
       </profile>
-      <profile name="Annotation profile for L1-sb-profiling-starter-test" enabled="true">
+      <profile name="Annotation profile for PZ2-3" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
         <module name="L1-spring-boot-security" />
         <module name="L1-spring-boot-security-spa-add-new-user" />
-        <module name="L1-sb-profiling-starter-test" />
         <module name="L1-spring-boot-security-spa" />
         <module name="Haraviuk" />
-        <module name="L1-spring-boot-security" />
+        <module name="PZ2-3" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="L1-b-keckeloack-demo" target="17" />
       <module name="L1-spring-boot-demo" target="17" />
+      <module name="PZ-2_3" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -59,6 +57,8 @@
       <module name="L1-spring-boot-security-spa-add-new-user" options="-parameters" />
       <module name="L1-spring-boot-security.main" options="-parameters" />
       <module name="L1-spring-boot-security.test" options="-parameters" />
+      <module name="PZ-2_3" options="-parameters" />
+      <module name="PZ2-3" options="-parameters" />
       <module name="l1-spring-security-db" options="-parameters" />
     </option>
   </component>

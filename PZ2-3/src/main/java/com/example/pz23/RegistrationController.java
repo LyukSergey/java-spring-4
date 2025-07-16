@@ -1,7 +1,6 @@
-package com.lss.l1springbootsecurityspaaddnewuser.controller;
+package com.example.pz23;
 
-import com.lss.l1springbootsecurityspaaddnewuser.dto.RegistrationRequest;
-import com.lss.l1springbootsecurityspaaddnewuser.service.RegistrationService;
+import com.example.pz23.RegistrationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,10 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/register")
-@RequiredArgsConstructor
+
 public class RegistrationController {
 
     private final RegistrationService registrationService;
+
+    public RegistrationController(RegistrationService registrationService) {
+        this.registrationService = registrationService;
+    }
 
     @PostMapping
     public ResponseEntity<String> register(@RequestBody RegistrationRequest request) {

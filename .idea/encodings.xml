@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Haraviuk OV/PZ2.3/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Haraviuk OV/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/L1-sb-profiling-starter-test/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/L1-sb-profiling-starter/src/main/java" charset="UTF-8" />
@@ -9,6 +10,8 @@
     <file url="file://$PROJECT_DIR$/L1-spring-boot-security-spa/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/L1-spring-boot-security/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/L1-spring-boot/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PZ2-3/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/PZ_2.3/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/l1-spring-security-db/src/main/java" charset="UTF-8" />
   </component>
 </project>
