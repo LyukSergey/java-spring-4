@@ -20,9 +20,8 @@
 2.  Додайте в нього новий метод. Вам не потрібно писати реалізацію, Spring Data JPA зробить це за вас, проаналізувавши назву методу.
 
     ```java
-
+    // UserRepository.java
     public interface UserRepository extends JpaRepository<User, Long> {
-        // ✅ ДОДАЙТЕ ЦЕЙ РЯДОК
         List<User> findAllByBankId(Long bankId);
     }
     ```
@@ -38,10 +37,7 @@
 2.  Додайте новий публічний метод, який буде викликати репозиторій.
 
     ```java
-    // ... інші імпорти
-    import com.lss.l6springboot.entity.User;
-    import java.util.List;
-
+    // BankManagementService.java
     @Service
     @RequiredArgsConstructor
     public class BankManagementService {
@@ -63,12 +59,7 @@
 2.  Додайте новий метод для обробки GET-запитів.
 
     ```java
-    // ... інші імпорти
-    import com.lss.l6springboot.entity.User;
-    import org.springframework.web.bind.annotation.GetMapping;
-    import org.springframework.web.bind.annotation.PathVariable;
-    import java.util.List;
-
+    // BankController.java
     @RestController
     @RequiredArgsConstructor
     public class BankController {
@@ -77,7 +68,7 @@
         // ✅ ДОДАЙТЕ ЦЕЙ МЕТОД
         @GetMapping("/banks/{bankId}/users")
         public ResponseEntity<List<User>> getUsersByBank(@PathVariable Long bankId) {
-            // ✅ ДОДАЙТЕ ЛОГІКУ ДЛЯ ОТРИМАННЯ КОРИСТУВАЧІВ
+            return ResponseEntity.ok(bankService.getUsersByBank(bankId));
         }
     }
     ```
@@ -112,16 +103,17 @@
 2.  Додайте новий метод `deleteUser`. Оскільки це операція, що змінює дані, її варто позначити анотацією `@Transactional`.
 
     ```java
-    // ... всередині класу BankManagementService ...
+    // BankManagementService.java
+    @Service
+    @RequiredArgsConstructor
+    public class BankManagementService {
+        // ... існуючі поля
 
-    import org.springframework.transaction.annotation.Transactional;
-
-    // ✅ ДОДАЙТЕ ЦЕЙ МЕТОД
-    @Transactional
-    public void deleteUser(Long userId) {
-        // Тут можна додати перевірку на існування користувача, якщо потрібно
-        // наприклад, if (!userRepository.existsById(userId)) { throw ... }
-        userRepository.deleteById(userId);
+        // ✅ ДОДАЙТЕ ЦЕЙ МЕТОД
+        @Transactional
+        public void deleteUser(Long userId) {
+            userRepository.deleteById(userId);
+        }
     }
     ```
 
@@ -132,17 +124,18 @@
 2.  Додайте метод для обробки HTTP DELETE-запитів.
 
     ```java
-    // ... всередині класу UserController ...
+    // UserController.java
+    @RestController
+    @RequiredArgsConstructor
+    public class UserController {
+        // ... існуючі поля та методи
 
-    import org.springframework.http.ResponseEntity;
-    import org.springframework.web.bind.annotation.DeleteMapping;
-    import org.springframework.web.bind.annotation.PathVariable;
-
-    // ✅ ДОДАЙТЕ ЦЕЙ МЕТОД
-    @DeleteMapping("/{userId}")
-    public ResponseEntity<Void> deleteUser(@PathVariable Long userId) {
-        bankService.deleteUser(userId);
-        return ResponseEntity.noContent().build();
+        // ✅ ДОДАЙТЕ ЦЕЙ МЕТОД
+        @DeleteMapping("/{userId}")
+        public ResponseEntity<Void> deleteUser(@PathVariable Long userId) {
+            bankService.deleteUser(userId);
+            return ResponseEntity.noContent().build();
+        }
     }
     ```
 
@@ -158,6 +151,13 @@
 2.  Оскільки браузер не може легко надсилати DELETE-запити, використайте Postman або команду `curl` у терміналі.
 
     **Приклад з `curl`:**
+    ```bash
+    curl -X DELETE http://localhost:8080/users/1
+    ```
+
+    (замініть `1` на ID користувача, якого хочете видалити).
+
+3.  **Очікуваний результат:** Команда виконається без помилок і поверне пусту відповідь зі статусом 204. Щоб переконатися, що користувач видалений, ви можете знову виконати GET-запит з першого завдання і побачити, що цього користувача більше немає у списку.
     ```bash
     curl -X DELETE http://localhost:8080/users/1
     ```

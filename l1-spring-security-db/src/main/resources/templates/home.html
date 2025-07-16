@@ -5,10 +5,10 @@
   <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 </head>
 <body>
-<h1>Вітаємо на захищеній сторінці!</h1>
-<p>Ви увійшли як: <b sec:authentication="name"></b></p>
-<form th:action="@{/logout}" method="post">
-  <button type="submit">Вийти</button>
-</form>
+    <h1>Вітаємо на захищеній сторінці!</h1>
+    <p>Ви увійшли як: <b sec:authentication="name"></b></p>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Вийти</button>
+    </form>
 </body>
 </html>

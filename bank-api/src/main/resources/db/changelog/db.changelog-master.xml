@@ -1,0 +1,29 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="1" author="your_name">
+        <createTable tableName="bank">
+            <column name="id" type="BIGINT" autoIncrement="true" primaryKey="true"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="total_amount" type="DOUBLE"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="your_name">
+        <createTable tableName="users">
+            <column name="id" type="BIGINT" autoIncrement="true" primaryKey="true"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="surname" type="VARCHAR(255)"/>
+            <column name="bank_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="3" author="your_name">
+        <addForeignKeyConstraint baseTableName="users" baseColumnNames="bank_id"
+                                 constraintName="fk_users_bank"
+                                 referencedTableName="bank" referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>

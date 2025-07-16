@@ -299,6 +299,8 @@ public class BankController {
     public ResponseEntity<List<UserDto>> getUsersByBank(@PathVariable Long bankId) {
         return ResponseEntity.ok(bankService.getUsersByBank(bankId));
     }
+
+    // ...existing code...
 }
 ```
 

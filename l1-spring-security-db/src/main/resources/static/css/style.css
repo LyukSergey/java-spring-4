@@ -41,7 +41,7 @@ input {
   font-size: 16px;
 }
 
-button, input [type="submit"] {
+button, input[type="submit"] {
   background-color: #007bff;
   color: white;
   padding: 12px 20px;
@@ -52,9 +52,9 @@ button, input [type="submit"] {
   transition: background-color 0.3s ease;
 }
 
-button:hover, input [type="submit"]:hover {
-                                   background-color: #0056b3;
-                                 }
+button:hover, input[type="submit"]:hover {
+  background-color: #0056b3;
+}
 
 .error-message {
   color: #dc3545;

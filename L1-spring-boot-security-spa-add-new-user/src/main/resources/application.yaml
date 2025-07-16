@@ -14,4 +14,4 @@ keycloak:
     realm: my-prod-app-realm
     # Дані конфіденційного клієнта
     client-id: backend-admin-client
-    client-secret: QCYjr2HHAath9oZj85QPlI3NB0jGSesg
+    client-secret: СЕКРЕТ_З_KEYCLOAK
