@@ -18,6 +18,7 @@
         <module name="app-main" />
         <module name="app-maven-plugin" />
         <module name="app-data" />
+        <module name="L1-sb-profiling-starter-mazur" />
       </profile>
       <profile name="Annotation profile for l1-spring-security-db" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -32,11 +33,20 @@
         <module name="L1-sb-profiling-starter-test" />
         <module name="L1-sb-data-jpa" />
         <module name="l1-spring-security-db" />
-        <module name="L1-spring-boot" />
         <module name="L1-sb-profiling-starter-test-mazur" />
         <module name="L1B-spring-boot-spa-mazur" />
         <module name="L1-spring-boot" />
         <module name="L1-sb-data-jpa-mazur" />
+      </profile>
+      <profile name="Annotation profile for L1-sb-data-jpa-mazur" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="L1-sb-data-jpa (1)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -48,6 +58,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="L1-sb-data-jpa" options="-parameters" />
+      <module name="L1-sb-data-jpa (1)" options="-parameters" />
       <module name="L1-sb-data-jpa-mazur" options="-parameters" />
       <module name="L1-sb-data-starter-mazur" options="-parameters" />
       <module name="L1-sb-profiling-starter" options="-parameters" />
@@ -61,10 +72,10 @@
       <module name="L1-spring-boot-security-spa-add-new-user" options="-parameters" />
       <module name="L1-spring-boot-security.main" options="-parameters" />
       <module name="L1-spring-boot-security.test" options="-parameters" />
+      <module name="L1B-spring-boot-spa-mazur" options="-parameters" />
       <module name="app-data" options="-parameters" />
       <module name="app-main" options="-parameters" />
       <module name="app-maven-plugin" options="-parameters" />
-      <module name="L1B-spring-boot-spa-mazur" options="-parameters" />
       <module name="l1-spring-security-db" options="-parameters" />
       <module name="l1b-maven" options="" />
     </option>
