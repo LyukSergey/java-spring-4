@@ -1,6 +1,6 @@
 spring:
   application:
-  name: vashchyk-data-project-jpa
+    name: vashchyk-data-project-jpa
   datasource:
     url: jdbc:postgresql://localhost:5432/l1-spring-boot_db
     username: demo_user
