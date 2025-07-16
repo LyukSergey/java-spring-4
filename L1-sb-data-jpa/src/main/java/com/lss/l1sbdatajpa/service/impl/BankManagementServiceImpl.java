@@ -50,8 +50,8 @@ public class BankManagementServiceImpl implements BankManagementService {
 
     @Override
     @Transactional
-    public UserDto getMaxSurnameLength(Long bankId, boolean withStream) {
-        if (withStream) {
+    public UserDto getMaxSurnameLength(Long bankId, boolean withJava) {
+        if (withJava) {
             return getMaxUserSurnameLengthWithStreams(bankId);
         }
         return getMaxUserSurnameLengthWithSql(bankId);
@@ -69,7 +69,8 @@ public class BankManagementServiceImpl implements BankManagementService {
     private UserDto getMaxUserSurnameLengthWithStreams(Long bankId) {
         long before = System.nanoTime();
         final Optional<User> user = userRepository.findAllByBankId(bankId)
-                .stream().min((u1, u2) -> Integer.compare(u2.getSurname().length(), u1.getSurname().length()));
+                .stream()
+                .min((u1, u2) -> Integer.compare(u2.getSurname().length(), u1.getSurname().length()));
         long after = System.nanoTime();
         System.out.println("Time taken with stream: " + nanoSecondsToMiliseconds(after, before) + " milli seconds");
         return user.map(u -> userMapper.toDto(u)).orElse(null);
