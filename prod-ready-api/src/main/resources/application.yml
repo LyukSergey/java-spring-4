@@ -5,3 +5,10 @@ spring:
         jwt:
 
           issuer-uri: http://localhost:8081/realms/my-prod-app-realm
+          keycloak:
+            admin-client:
+              # Частина 2: Налаштування для адмін-доступу
+              server-url: http://localhost:8081
+              realm: my-prod-app-realm
+              client-id: backend-admin-client
+              client-secret: QCYjr2HHAath9oZj85QPlI3NB0jGSesg
