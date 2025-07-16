@@ -1,0 +1,10 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: pz-spring-boot_db
+      POSTGRES_USER: demo_user
+      POSTGRES_PASSWORD: demo_pass
+    ports:
+      - "5432:5432"
