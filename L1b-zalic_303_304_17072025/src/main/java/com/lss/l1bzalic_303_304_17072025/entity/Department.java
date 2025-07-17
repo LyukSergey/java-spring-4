@@ -1,6 +1,5 @@
 package com.lss.l1bzalic_303_304_17072025.entity;
 
-import com.lss.l1bzalic_303_304.entity.Employee;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
