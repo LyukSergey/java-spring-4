@@ -190,10 +190,10 @@ public class SecurityConfig {
 
 ### \#\# Крок 5: Створення REST-контролера
 
-Створіть пакет `controller`, а в ньому клас `DemoController.java`.
+Створіть пакет `com.example.starter2.controller`, а в ньому клас `DemoController.java`.
 
 ```java
-package com.example.keycloakdemo.controller;
+package com.example.keycloakdemo.com.example.starter2.controller;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.jwt.Jwt;

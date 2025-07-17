@@ -62,7 +62,7 @@ keycloak:
 Цей сервіс буде інкапсулювати всю логіку створення користувача в Keycloak.
 
 ```java
-package com.example.prodreadyapi.service;
+package com.example.prodreadyapi.com.example.starter2.service;
 
 import jakarta.ws.rs.core.Response;
 import lombok.RequiredArgsConstructor;
@@ -132,9 +132,9 @@ public class RegistrationService {
 #### **Крок 4: Створіть `RegistrationController`**
 
 ```java
-package com.example.prodreadyapi.controller;
+package com.example.prodreadyapi.com.example.starter2.controller;
 
-import com.example.prodreadyapi.service.RegistrationService;
+import com.example.prodreadyapi.com.example.starter2.service.RegistrationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

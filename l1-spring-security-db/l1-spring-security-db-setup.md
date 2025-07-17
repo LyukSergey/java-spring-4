@@ -137,7 +137,7 @@ public class SecurityUser implements UserDetails {
 Цей сервіс буде завантажувати користувача з бази даних.
 
 ```java
-package com.example.dbsecurity.service;
+package com.example.dbsecurity.com.example.starter2.service;
 
 import com.example.dbsecurity.repository.UserRepository;
 import com.example.dbsecurity.security.SecurityUser;
@@ -217,7 +217,7 @@ public class SecurityConfig {
 Створіть `PageController.java` для відображення сторінок.
 
 ```java
-package com.example.dbsecurity.controller;
+package com.example.dbsecurity.com.example.starter2.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

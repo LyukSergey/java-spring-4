@@ -7,13 +7,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="L1-sb-profiling-starter" />
         <module name="app-main" />
         <module name="app-maven-plugin" />
         <module name="L1-sb-unit-integration-tests-controller-advice" />
         <module name="app-data" />
+        <module name="starter1" />
+        <module name="starter2" />
       </profile>
-      <profile name="Annotation profile for zad_2" enabled="true">
+      <profile name="Annotation profile for L1-sb-profiling-starter-test" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -24,7 +25,6 @@
         <module name="zad_2" />
         <module name="L1-spring-boot-security-spa-add-new-user" />
         <module name="L1-spring-boot-security-spa" />
-        <module name="L1-sb-profiling-starter-test" />
         <module name="L1-sb-data-jpa" />
         <module name="l1-spring-security-db" />
         <module name="L1b-zalic_303_304" />
@@ -32,12 +32,19 @@
         <module name="demo" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="L1-sb-profiling-starter" target="17" />
+      <module name="L1-sb-profiling-starter-test" target="17" />
+      <module name="L1-sb-profiling-starter-test (1)" target="17" />
+      <module name="start2" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="L1-sb-data-jpa" options="-parameters" />
       <module name="L1-sb-profiling-starter" options="-parameters" />
       <module name="L1-sb-profiling-starter-test" options="-parameters" />
+      <module name="L1-sb-profiling-starter-test (1)" options="-parameters" />
       <module name="L1-sb-unit-integration-tests-controller-advice" options="-parameters" />
       <module name="L1-spring-boot" options="-parameters" />
       <module name="L1-spring-boot-security" options="-parameters" />
@@ -49,6 +56,9 @@
       <module name="app-maven-plugin" options="-parameters" />
       <module name="demo" options="-parameters" />
       <module name="l1-spring-security-db" options="-parameters" />
+      <module name="start2" options="-parameters" />
+      <module name="starter1" options="-parameters" />
+      <module name="starter2" options="-parameters" />
       <module name="zad_2" options="-parameters" />
     </option>
   </component>
