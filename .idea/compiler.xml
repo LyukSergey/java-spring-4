@@ -20,7 +20,7 @@
         <module name="app-data" />
         <module name="L1-sb-unit-integration-tests-controller-advice" />
       </profile>
-      <profile name="Annotation profile for L1-sb-unit-integration-tests-controller-advice" enabled="true">
+      <profile name="Annotation profile for l1-spring-security-db" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -35,8 +35,18 @@
         <module name="l1-spring-security-db" />
         <module name="L1-spring-boot" />
       </profile>
+      <profile name="Annotation profile for L1b-zalic_303_304" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="multi-module-project" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="fleet-api" target="1.5" />
       <module name="L1-b-keckeloack-demo" target="17" />
       <module name="L1-spring-boot-demo" target="17" />
     </bytecodeTargetLevel>
@@ -59,6 +69,7 @@
       <module name="app-maven-plugin" options="-parameters" />
       <module name="l1-spring-security-db" options="-parameters" />
       <module name="l1b-maven" options="" />
+      <module name="multi-module-project" options="-parameters" />
     </option>
   </component>
 </project>
