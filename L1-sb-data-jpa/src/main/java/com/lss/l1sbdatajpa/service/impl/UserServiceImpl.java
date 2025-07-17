@@ -7,6 +7,7 @@ import com.lss.l1sbdatajpa.repository.UserRepository;
 import com.lss.l1sbdatajpa.service.UserService;
 import jakarta.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

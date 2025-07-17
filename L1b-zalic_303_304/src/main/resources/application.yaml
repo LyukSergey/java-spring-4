@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: L1b-zalic_303_304
+  datasource:
+    url: jdbc:postgresql://localhost:5432/l1b-zalic_303_304_db
+    username: demo_user
+    password: demo_pass
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    open-in-view: false
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.xml
