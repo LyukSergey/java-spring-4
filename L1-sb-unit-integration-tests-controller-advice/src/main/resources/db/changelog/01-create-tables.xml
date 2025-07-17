@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="1" author="sergijluk">
+        <createTable tableName="starships">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="captain" type="VARCHAR(255)"/>
+            <column name="max_crew_size" type="INT"/>
+        </createTable>
+
+        <createTable tableName="missions">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="codename" type="VARCHAR(255)"/>
+            <column name="objective" type="VARCHAR(1000)"/>
+            <column name="status" type="VARCHAR(50)"/>
+            <column name="starship_id" type="BIGINT">
+                <constraints foreignKeyName="fk_missions_starships" references="starships(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
