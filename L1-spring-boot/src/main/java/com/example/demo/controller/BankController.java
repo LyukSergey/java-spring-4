@@ -4,16 +4,11 @@ import com.example.demo.dto.UserDto;
 import com.example.demo.dto.UserRegistrationDto;
 import com.example.demo.entity.User;
 import com.example.demo.service.BankManagementService;
-import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/banks") // Базовий шлях для всіх ендпоінтів
@@ -38,6 +33,7 @@ public class BankController {
 
     @GetMapping("/{bankId}/users")
     public ResponseEntity<List<UserDto>> getUsersByBank(@PathVariable Long bankId) {
-        return ResponseEntity.ok(bankService.getUsersByBank(bankId));
+        List<UserDto> users = bankService.getUsersByBank(bankId);
+        return ResponseEntity.ok(users);
     }
 }
