@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -38,5 +39,11 @@ public class BankController {
     @GetMapping("/{bankId}/users")
     public ResponseEntity<List<UserDto>> getUsersByBank(@PathVariable Long bankId) {
         return ResponseEntity.ok(bankService.getUsersByBank(bankId));
+    }
+
+    @GetMapping("/{bank-id}/users/max-surname-length")
+    public ResponseEntity<UserDto> getMaxSurnameLength(@PathVariable(name = "bank-id") Long bankId,
+            @RequestParam(value = "with-stream", required = false, defaultValue = "false") Boolean withStream) {
+        return ResponseEntity.ok(bankService.getMaxSurnameLength(bankId, withStream));
     }
 }

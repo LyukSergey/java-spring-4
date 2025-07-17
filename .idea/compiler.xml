@@ -6,7 +6,7 @@
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.38/57f8f5e02e92a30fd21b80cbd426a4172b5f8e29/lombok-1.18.38.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.38/57f8f5e02e92a30fd21b80cbd426a4172b5f8e29/lombok-1.18.38.jar" />
         </processorPath>
         <module name="L1-spring-boot-security.main" />
       </profile>
@@ -15,8 +15,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="L1-sb-profiling-starter" />
+        <module name="app-main" />
+        <module name="app-maven-plugin" />
+        <module name="app-data" />
+        <module name="L1-sb-unit-integration-tests-controller-advice" />
       </profile>
-      <profile name="Annotation profile for jpa-Naumenko" enabled="true">
+      <profile name="Annotation profile for L1b-zalic_303_304" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -29,17 +33,13 @@
         <module name="L1-sb-profiling-starter-test" />
         <module name="L1-sb-data-jpa" />
         <module name="l1-spring-security-db" />
+        <module name="L1b-zalic_303_304" />
         <module name="L1-spring-boot" />
-        <module name="jpa-Naumenko" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="L1-b-keckeloack-demo" target="17" />
-      <module name="L1-sb-profiling-starter-Naumenko" target="17" />
-      <module name="L1-sb-profiling-starter-osnova" target="17" />
       <module name="L1-spring-boot-demo" target="17" />
-      <module name="test_add" target="17" />
-      <module name="test_security" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -47,6 +47,7 @@
       <module name="L1-sb-data-jpa" options="-parameters" />
       <module name="L1-sb-profiling-starter" options="-parameters" />
       <module name="L1-sb-profiling-starter-test" options="-parameters" />
+      <module name="L1-sb-unit-integration-tests-controller-advice" options="-parameters" />
       <module name="L1-spring-boot" options="-parameters" />
       <module name="L1-spring-boot-demo" options="-parameters" />
       <module name="L1-spring-boot-security" options="-parameters" />
@@ -54,8 +55,12 @@
       <module name="L1-spring-boot-security-spa-add-new-user" options="-parameters" />
       <module name="L1-spring-boot-security.main" options="-parameters" />
       <module name="L1-spring-boot-security.test" options="-parameters" />
-      <module name="jpa-Naumenko" options="-parameters" />
+      <module name="L1b-zalic_303_304" options="-parameters" />
+      <module name="app-data" options="-parameters" />
+      <module name="app-main" options="-parameters" />
+      <module name="app-maven-plugin" options="-parameters" />
       <module name="l1-spring-security-db" options="-parameters" />
+      <module name="l1b-maven" options="" />
     </option>
   </component>
 </project>
