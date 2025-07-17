@@ -1,15 +1,21 @@
-package com.lss.l1sbdatajpa.service;
+@Service
+@RequiredArgsConstructor
+public class BankManagementServiceImpl implements BankManagementService {
 
-import com.lss.l1sbdatajpa.dto.UserDto;
-import java.util.List;
+    private final BankRepository bankRepository;
+    private final UserRepository userRepository;
+    private final UserMapper userMapper;
 
-public interface BankManagementService {
+    // ...
 
-    UserDto registerNewUser(String name, String surname, Long bankId);
+    @Override
+    @Transactional // Гарантує, що сесія буде відкрита протягом всього методу
+    public List<UserDto> getUsersByBank(Long bankId) {
+        final List<User> users = userRepository.findAllByBankId(bankId);
+        // Тут ми можемо безпечно звертатися до лінивих полів, якби вони нам були потрібні
+        return users.stream()
+                .map(userMapper::toDto)
+                .toList();
+    }
 
-    void deleteUser(Long userId);
-
-    List<UserDto> getUsersByBank(Long bankId);
-
-    UserDto getMaxSurnameLength(Long bankId, boolean withStream);
-}
+// ...
