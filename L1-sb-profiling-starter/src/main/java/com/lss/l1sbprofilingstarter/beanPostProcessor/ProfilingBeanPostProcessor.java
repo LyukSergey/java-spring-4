@@ -14,6 +14,7 @@ public class ProfilingBeanPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         if (bean.getClass().isAnnotationPresent(Profiling.class)) {
+            System.out.println("Додаю до мапи : " + beanName + " класу " + bean.getClass().getName());
             beansToProfile.put(beanName, bean.getClass());
         }
         return bean;
@@ -22,6 +23,7 @@ public class ProfilingBeanPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         if (beansToProfile.containsKey(beanName)) {
+            System.out.println("Створюю проксі для біну " + beanName);
             Class<?> beanClass = beansToProfile.get(beanName);
             return Proxy.newProxyInstance(
                     beanClass.getClassLoader(),
