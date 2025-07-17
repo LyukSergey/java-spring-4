@@ -46,4 +46,12 @@ public class BankController {
             @RequestParam(value = "with-stream", required = false, defaultValue = "false") Boolean withStream) {
         return ResponseEntity.ok(bankService.getMaxSurnameLength(bankId, withStream));
     }
+    private final BankManagementService bankService;
+
+    // ...
+
+    @GetMapping("/{bankId}/users")
+    public ResponseEntity<List<UserDto>> getUsersByBank(@PathVariable Long bankId) {
+        return ResponseEntity.ok(bankService.getUsersByBank(bankId));
+    }
 }
