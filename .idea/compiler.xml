@@ -26,7 +26,7 @@
         </processorPath>
         <module name="L1-spring-boot" />
       </profile>
-      <profile name="Annotation profile for L1-sb-data-jpa" enabled="true">
+      <profile name="Annotation profile for l1-spring-security-db" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />

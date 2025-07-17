@@ -5,6 +5,7 @@ import com.example.demo.dto.UserRegistrationDto;
 import com.example.demo.entity.User;
 import com.example.demo.service.BankManagementService;
 import java.util.List;
+//import com.lss.l6springboot.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -40,4 +41,5 @@ public class BankController {
     public ResponseEntity<List<UserDto>> getUsersByBank(@PathVariable Long bankId) {
         return ResponseEntity.ok(bankService.getUsersByBank(bankId));
     }
+
 }
