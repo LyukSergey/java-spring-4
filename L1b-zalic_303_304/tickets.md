@@ -1,4 +1,4 @@
-* **Сутності**:
+  * **Сутності**:
     * `Department` (`id`, `name`)
     * `Employee` (`id`, `firstName`, `lastName`, `email`, `position`, `salary`)
 * **Зв'язки**: `@OneToMany` у `Department`, `@ManyToOne` у `Employee`.
