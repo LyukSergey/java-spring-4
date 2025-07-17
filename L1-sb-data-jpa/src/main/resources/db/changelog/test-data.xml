@@ -10,7 +10,12 @@
 
         <insert tableName="bank">
             <column name="id" value="1"/>
-            <column name="name" value="Банк"/>
+            <column name="name" value="Приват Банк"/>
+            <column name="total_amount" value="1000000.00"/>
+        </insert>
+        <insert tableName="bank">
+            <column name="id" value="2"/>
+            <column name="name" value="Райфайзен Банк"/>
             <column name="total_amount" value="1000000.00"/>
         </insert>
 
@@ -63,6 +68,32 @@
             <column name="name" value="Ліна"/>
             <column name="surname" value="Костенко"/>
             <column name="bank_id" value="1"/>
+        </insert>
+
+        <insert tableName="users">
+            <column name="name" value="Марія"/>
+            <column name="surname" value="Кюрі"/>
+            <column name="bank_id" value="2"/>
+        </insert>
+        <insert tableName="users">
+            <column name="name" value="Альберт"/>
+            <column name="surname" value="Ейнштейн"/>
+            <column name="bank_id" value="2"/>
+        </insert>
+        <insert tableName="users">
+            <column name="name" value="Нікола"/>
+            <column name="surname" value="Тесла"/>
+            <column name="bank_id" value="2"/>
+        </insert>
+        <insert tableName="users">
+            <column name="name" value="Ісаак"/>
+            <column name="surname" value="Ньютон"/>
+            <column name="bank_id" value="2"/>
+        </insert>
+        <insert tableName="users">
+            <column name="name" value="Леонардо"/>
+            <column name="surname" value="да Вінчі"/>
+            <column name="bank_id" value="2"/>
         </insert>
 
     </changeSet>

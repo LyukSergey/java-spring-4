@@ -10,12 +10,19 @@
     <file url="file://$PROJECT_DIR$/L1-sb-homenko-starter/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/L1-sb-profiling-starter-test/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/L1-sb-profiling-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L1-sb-unit-integration-tests-controller-advice/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/L1-spring-boot-demo/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/L1-spring-boot-security-spa-add-new-user/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/L1-spring-boot-security-spa/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/L1-spring-boot-security/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/L1-spring-boot/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L1b-zalic_303_304/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/L1spring/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/l1-spring-security-db/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/l1b-maven/app-data/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/l1b-maven/app-main/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/l1b-maven/app-maven-plugin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/l1b-maven/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/l1b-maven/src/main/resources" charset="UTF-8" />
   </component>
 </project>
