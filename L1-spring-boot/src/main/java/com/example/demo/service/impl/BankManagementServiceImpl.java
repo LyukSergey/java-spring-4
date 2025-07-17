@@ -47,4 +47,16 @@ public class BankManagementServiceImpl implements BankManagementService {
 
         userRepository.deleteById(userId);
     }
+
+    @Override
+    @Transactional
+    public List<UserDto> getUsersByBankId(Long bankId) {
+        bankRepository.findById(bankId)
+                .orElseThrow(() -> new RuntimeException("Банк не знайдено!"));
+        List<User> users = userRepository.findAllByBankId(bankId);
+        return users.stream()
+                .map(userMapper::toDto)
+                .toList();
+    }
+
 }

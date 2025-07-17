@@ -4,7 +4,7 @@ import com.example.demo.dto.UserDto;
 import com.example.demo.entity.User;
 import com.example.demo.mapper.UserMapper;
 import com.example.demo.repository.UserRepository;
-import com.example.demo.service.BankManagementService;
+// ...existing code...
 import com.example.demo.service.UserService;
 import jakarta.transaction.Transactional;
 import java.util.List;
@@ -25,5 +25,14 @@ public class UserServiceImpl implements UserService {
         return users.stream()
                 .map(userMapper::toDto)
                 .toList();
+    }
+
+    @Override
+    @Transactional
+    public void deleteUser(Long userId) {
+        if (!userRepository.existsById(userId)) {
+            throw new RuntimeException("Користувача з ID " + userId + " не знайдено.");
+        }
+        userRepository.deleteById(userId);
     }
 }
