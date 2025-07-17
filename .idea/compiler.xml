@@ -30,13 +30,14 @@
         </processorPath>
         <module name="L1-spring-boot" />
       </profile>
-      <profile name="Annotation profile for L1b-zalic_303_304" enabled="true">
+      <profile name="Annotation profile for L1b-zalic_303_304_17072025" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
+        <module name="L1b-zalic_303_304_17072025" />
         <module name="L1-spring-boot-security" />
         <module name="L1-spring-boot-security-spa-add-new-user" />
         <module name="L1-spring-boot-security-spa" />
@@ -71,6 +72,7 @@
       <module name="L1-spring-boot-security.main" options="-parameters" />
       <module name="L1-spring-boot-security.test" options="-parameters" />
       <module name="L1b-zalic_303_304" options="-parameters" />
+      <module name="L1b-zalic_303_304_17072025" options="-parameters" />
       <module name="app-data" options="-parameters" />
       <module name="app-main" options="-parameters" />
       <module name="app-maven-plugin" options="-parameters" />
