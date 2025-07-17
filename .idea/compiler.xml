@@ -13,7 +13,7 @@
         <module name="L1-sb-unit-integration-tests-controller-advice" />
         <module name="app-data" />
       </profile>
-      <profile name="Annotation profile for l1-spring-security-db" enabled="true">
+      <profile name="Annotation profile for zad_2" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -21,6 +21,7 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
         <module name="L1-spring-boot-security" />
+        <module name="zad_2" />
         <module name="L1-spring-boot-security-spa-add-new-user" />
         <module name="L1-spring-boot-security-spa" />
         <module name="L1-sb-profiling-starter-test" />
@@ -48,6 +49,7 @@
       <module name="app-maven-plugin" options="-parameters" />
       <module name="demo" options="-parameters" />
       <module name="l1-spring-security-db" options="-parameters" />
+      <module name="zad_2" options="-parameters" />
     </option>
   </component>
 </project>

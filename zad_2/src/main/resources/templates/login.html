@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="uk" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+<h1>Сторінка входу</h1>
+<div th:if="${param.error}" style="color: red;">
+    Неправильне ім'я користувача або пароль.
+</div>
+<form th:action="@{/login}" method="post">
+    <div><label> Ім'я користувача: <input type="text" name="username"/> </label></div>
+    <div><label> Пароль: <input type="password" name="password"/> </label></div>
+    <div><input type="submit" value="Увійти"/></div>
+</form>
+</body>
+</html>

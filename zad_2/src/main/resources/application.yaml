@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: zad2secur
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/zad2secur
+    username: demo_user
+    password: demo_password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    open-in-view: false
