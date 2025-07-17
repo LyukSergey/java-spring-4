@@ -30,6 +30,7 @@
         <option value="$PROJECT_DIR$/l1b-maven/app-main/pom.xml" />
         <option value="$PROJECT_DIR$/L1-sb-unit-integration-tests-controller-advice/pom.xml" />
         <option value="$PROJECT_DIR$/L1b-zalic_303_304/pom.xml" />
+        <option value="$PROJECT_DIR$/Pz-jpa/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -41,6 +42,10 @@
         <option value="$PROJECT_DIR$/PZ_2.3/pom.xml" />
       </set>
     </option>
+  </component>
+  <component name="PWA">
+    <option name="enabled" value="true" />
+    <option name="wasEnabledAtLeastOnce" value="true" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
