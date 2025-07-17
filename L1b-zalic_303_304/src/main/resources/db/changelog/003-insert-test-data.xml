@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+          http://www.liquibase.org/xml/ns/dbchangelog
+          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="3" author="examiner">
+        <insert tableName="departments">
+            <column name="name" value="IT"/>
+        </insert>
+        <insert tableName="departments">
+            <column name="name" value="HR"/>
+        </insert>
+        <insert tableName="departments">
+            <column name="name" value="Finance"/>
+        </insert>
+
+        <insert tableName="employees">
+            <column name="first_name" value="Іван"/>
+            <column name="last_name" value="Петренко"/>
+            <column name="email" value="ivan.p@example.com"/>
+            <column name="position" value="Java Developer"/>
+            <column name="salary" value="3000.00"/>
+            <column name="department_id" value="1"/>
+        </insert>
+        <insert tableName="employees">
+            <column name="first_name" value="Олена"/>
+            <column name="last_name" value="Іванова"/>
+            <column name="email" value="olena.i@example.com"/>
+            <column name="position" value="QA Engineer"/>
+            <column name="salary" value="2500.00"/>
+            <column name="department_id" value="1"/>
+        </insert>
+        <insert tableName="employees">
+            <column name="first_name" value="Марія"/>
+            <column name="last_name" value="Ковальчук"/>
+            <column name="email" value="maria.k@example.com"/>
+            <column name="position" value="Recruiter"/>
+            <column name="salary" value="1800.00"/>
+            <column name="department_id" value="2"/>
+        </insert>
+        <insert tableName="employees">
+            <column name="first_name" value="Андрій"/>
+            <column name="last_name" value="Шевченко"/>
+            <column name="email" value="andriy.s@example.com"/>
+            <column name="position" value="Accountant"/>
+            <column name="salary" value="2200.00"/>
+            <column name="department_id" value="3"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
