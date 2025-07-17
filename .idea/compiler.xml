@@ -10,30 +10,31 @@
         </processorPath>
         <module name="L1-spring-boot-security.main" />
       </profile>
-      <profile name="Annotation profile for l1-spring-security-db" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-        </processorPath>
-        <module name="l1-spring-security-db" />
-        <module name="L1-spring-boot" />
-      </profile>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="L1-sb-profiling-starter" />
       </profile>
-      <profile name="Annotation profile for L1-sb-profiling-starter-test" enabled="true">
+      <profile name="Annotation profile for L1-spring-boot" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="L1-spring-boot" />
+        <module name="l1-spring-security-db" />
+      </profile>
+      <profile name="Annotation profile for litvyn-spring-boot" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
+        <module name="litvyn-spring-boot" />
         <module name="L1-spring-boot-security" />
         <module name="L1-spring-boot-security-spa-add-new-user" />
         <module name="L1-sb-profiling-starter-test" />
@@ -57,6 +58,7 @@
       <module name="L1-spring-boot-security.main" options="-parameters" />
       <module name="L1-spring-boot-security.test" options="-parameters" />
       <module name="l1-spring-security-db" options="-parameters" />
+      <module name="litvyn-spring-boot" options="-parameters" />
     </option>
   </component>
 </project>
