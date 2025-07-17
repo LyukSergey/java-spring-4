@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="2" author="sergijluk">
+        <insert tableName="starships">
+            <column name="id" value="1"/>
+            <column name="name" value="Enterprise"/>
+            <column name="captain" value="Jean-Luc Picard"/>
+            <column name="max_crew_size" value="1014"/>
+        </insert>
+        <insert tableName="starships">
+            <column name="id" value="2"/>
+            <column name="name" value="Voyager"/>
+            <column name="captain" value="Kathryn Janeway"/>
+            <column name="max_crew_size" value="160"/>
+        </insert>
+
+        <insert tableName="missions">
+            <column name="codename" value="Operation 'First Contact'"/>
+            <column name="objective" value="Establish peaceful relations with the Vulcans"/>
+            <column name="status" value="COMPLETED"/>
+            <column name="starship_id" value="1"/>
+        </insert>
+        <insert tableName="missions">
+            <column name="codename" value="Project 'Genesis'"/>
+            <column name="objective" value="Explore the Mutara Nebula"/>
+            <column name="status" value="ACTIVE"/>
+            <column name="starship_id" value="1"/>
+        </insert>
+
+        <insert tableName="missions">
+            <column name="codename" value="Mission 'Delta Quadrant'"/>
+            <column name="objective" value="Find a way back to the Alpha Quadrant"/>
+            <column name="status" value="ACTIVE"/>
+            <column name="starship_id" value="2"/>
+        </insert>
+        <insert tableName="missions">
+            <column name="codename" value="Protocol 'Omega'"/>
+            <column name="objective" value="Contain the Omega particle"/>
+            <column name="status" value="PLANNED"/>
+            <column name="starship_id" value="2"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
