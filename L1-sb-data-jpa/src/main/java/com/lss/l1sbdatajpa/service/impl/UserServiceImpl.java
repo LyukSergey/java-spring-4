@@ -1,7 +1,7 @@
 package com.lss.l1sbdatajpa.service.impl;
 
+import com.example.demo.entity.User;
 import com.lss.l1sbdatajpa.dto.UserDto;
-import com.lss.l1sbdatajpa.entity.User;
 import com.lss.l1sbdatajpa.mapper.UserMapper;
 import com.lss.l1sbdatajpa.repository.UserRepository;
 import com.lss.l1sbdatajpa.service.UserService;

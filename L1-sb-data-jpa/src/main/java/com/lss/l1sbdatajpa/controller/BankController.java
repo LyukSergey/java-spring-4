@@ -1,8 +1,8 @@
 package com.lss.l1sbdatajpa.controller;
 
+import com.example.demo.service.BankManagementService;
 import com.lss.l1sbdatajpa.dto.UserDto;
 import com.lss.l1sbdatajpa.dto.UserRegistrationDto;
-import com.lss.l1sbdatajpa.service.BankManagementService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

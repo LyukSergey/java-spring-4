@@ -1,7 +1,7 @@
 package com.lss.l1sbdatajpa.mapper;
 
+import com.example.demo.entity.User;
 import com.lss.l1sbdatajpa.dto.UserDto;
-import com.lss.l1sbdatajpa.entity.User;
 import org.springframework.stereotype.Component;
 
 @Component
