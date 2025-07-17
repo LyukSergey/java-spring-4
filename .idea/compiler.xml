@@ -3,7 +3,7 @@
   <component name="CompilerConfiguration">
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
-      <profile name="Annotation profile for L1b-zalic_303_304" enabled="true">
+      <profile name="Annotation profile for L1-spring-boot-security-spa-add-new-user-mazur" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -11,8 +11,19 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
         <module name="L1b-zalic_303_304" />
+        <module name="L1-spring-boot-security-spa-add-new-user-mazur" />
+      </profile>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="app-data" />
+        <module name="app-maven-plugin" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="l1b-maven" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -27,6 +38,7 @@
       <module name="L1-spring-boot-security" options="-parameters" />
       <module name="L1-spring-boot-security-spa" options="-parameters" />
       <module name="L1-spring-boot-security-spa-add-new-user" options="-parameters" />
+      <module name="L1-spring-boot-security-spa-add-new-user-mazur" options="-parameters" />
       <module name="L1B-spring-boot-spa-mazur" options="-parameters" />
       <module name="L1b-zalic_303_304" options="-parameters" />
       <module name="app-data" options="-parameters" />

@@ -1,4 +1,4 @@
-package com.lss.l1springbootsecurityspaaddnewuser.config.properties;
+package com.example.l1springbootsecurityspaaddnewusermazur.config.properties;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Data
 @Configuration
-@ConfigurationProperties(prefix = "keycloak.admin-client1")
+@ConfigurationProperties(prefix = "keycloak.admin-client")
 public class KeycloakProperties {
 
     private String serverUrl;

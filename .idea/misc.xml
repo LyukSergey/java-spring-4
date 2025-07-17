@@ -23,12 +23,14 @@
         <option value="$PROJECT_DIR$/L1-sb-profiling-starter-mazur/pom.xml" />
         <option value="$PROJECT_DIR$/L1-sb-profiling-starter-test-mazur/pom.xml" />
         <option value="$PROJECT_DIR$/L1-sb-data-jpa-mazur/pom.xml" />
+        <option value="$PROJECT_DIR$/L1-spring-boot-security-spa-add-new-user-mazur/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/L1-sb-data-starter-mazur/pom.xml" />
         <option value="$PROJECT_DIR$/L1-spring-boot-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/l1b-maven/pom.xml" />
       </set>
     </option>
   </component>
