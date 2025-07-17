@@ -14,7 +14,7 @@
             <column name="total_amount" value="1000000.00"/>
         </insert>
         <insert tableName="bank">
-            <column name="id" value="1"/>
+            <column name="id" value="2"/>
             <column name="name" value="Райфайзен Банк"/>
             <column name="total_amount" value="1000000.00"/>
         </insert>
