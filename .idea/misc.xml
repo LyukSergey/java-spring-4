@@ -16,6 +16,8 @@
         <option value="$PROJECT_DIR$/L1-sb-profiling-starter/pom.xml" />
         <option value="$PROJECT_DIR$/L1-sb-profiling-starter-test/pom.xml" />
         <option value="$PROJECT_DIR$/L1-sb-data-jpa/pom.xml" />
+        <option value="$PROJECT_DIR$/L1-sb-data-jpa-test/pom.xml" />
+        <option value="$PROJECT_DIR$/L1-SB/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -104,7 +106,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="corretto-21" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="corretto-21" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
