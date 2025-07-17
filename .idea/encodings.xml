@@ -10,6 +10,7 @@
     <file url="file://$PROJECT_DIR$/L1-spring-boot-security-spa/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/L1-spring-boot-security/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/L1-spring-boot/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L1b-zalic_303_304/spring-boot-naumenko/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/L1b-zalic_303_304/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/l1-spring-security-db/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/l1b-maven/app-data/src/main/java" charset="UTF-8" />
@@ -17,5 +18,6 @@
     <file url="file://$PROJECT_DIR$/l1b-maven/app-maven-plugin/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/l1b-maven/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/l1b-maven/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-naumenko/src/main/java" charset="UTF-8" />
   </component>
 </project>
