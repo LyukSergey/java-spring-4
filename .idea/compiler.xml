@@ -21,7 +21,7 @@
         <module name="L1-sb-unit-integration-tests-controller-advice" />
         <module name="L1-sb-profiling-starter-mazur" />
       </profile>
-      <profile name="Annotation profile for L1-sb-unit-integration-tests-controller-advice" enabled="true">
+      <profile name="Annotation profile for l1-spring-security-db" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -34,20 +34,11 @@
         <module name="L1-sb-profiling-starter-test" />
         <module name="L1-sb-data-jpa" />
         <module name="l1-spring-security-db" />
+        <module name="L1-sb-data-jpa (1)" />
         <module name="L1-sb-profiling-starter-test-mazur" />
         <module name="L1B-spring-boot-spa-mazur" />
         <module name="L1-spring-boot" />
         <module name="L1-sb-data-jpa-mazur" />
-      </profile>
-      <profile name="Annotation profile for L1-sb-data-jpa-mazur" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-        </processorPath>
-        <module name="L1-sb-data-jpa (1)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -65,8 +56,8 @@
       <module name="L1-sb-profiling-starter" options="-parameters" />
       <module name="L1-sb-profiling-starter-mazur" options="-parameters" />
       <module name="L1-sb-profiling-starter-test" options="-parameters" />
-      <module name="L1-sb-unit-integration-tests-controller-advice" options="-parameters" />
       <module name="L1-sb-profiling-starter-test-mazur" options="-parameters" />
+      <module name="L1-sb-unit-integration-tests-controller-advice" options="-parameters" />
       <module name="L1-spring-boot" options="-parameters" />
       <module name="L1-spring-boot-demo" options="-parameters" />
       <module name="L1-spring-boot-security" options="-parameters" />
