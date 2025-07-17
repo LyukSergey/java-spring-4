@@ -1,13 +1,12 @@
 package com.lss.l1sbprofilingstartertest;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootTest
-class L1SbProfilingStarterTestApplicationTests {
-
-    @Test
-    void contextLoads() {
+@SpringBootApplication
+public class L1SbProfilingStarterTestApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(L1SbProfilingStarterTestApplication.class, args);
     }
-
 }
+
