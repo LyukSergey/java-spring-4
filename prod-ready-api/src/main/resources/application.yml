@@ -1,0 +1,7 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          # ✅ ОБОВ'ЯЗКОВО: Вказуємо на наш новий realm 8180
+          issuer-uri: http://localhost:8081/realms/my-prod-app-realm
