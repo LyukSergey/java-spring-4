@@ -1,21 +1,22 @@
 package com.lss.l1bzalic_303_304.dto;
 
 import java.math.BigDecimal;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
 public class EmployeeDto {
+    public Long id;
+    public String fullName;
+    public String position;
+    public BigDecimal salary;
+    public String departmentName;
 
-    private Long id;
-    private String fullName;
-    private String position;
-    private BigDecimal salary;
-    private String departmentName;
+    public EmployeeDto() {
+    }
 
+    public EmployeeDto(Long id, String fullName, String position, BigDecimal salary, String departmentName) {
+        this.id = id;
+        this.fullName = fullName;
+        this.position = position;
+        this.salary = salary;
+        this.departmentName = departmentName;
+    }
 }
