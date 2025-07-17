@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="L1-sb-profiling-starter" />
         <module name="L1-hetun" />
+        <module name="l1-sb-getun-starter" />
       </profile>
       <profile name="Annotation profile for L1-spring-boot-security" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -21,7 +22,7 @@
         <module name="L1-spring-boot-security" />
         <module name="L1-spring-boot" />
       </profile>
-      <profile name="Annotation profile for l1-spring-security-db" enabled="true">
+      <profile name="Annotation profile for l1-sb-getun-starter" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -46,6 +47,7 @@
       <module name="L1-spring-boot-security" options="-parameters" />
       <module name="L1-spring-boot-security-spa" options="-parameters" />
       <module name="L1-spring-boot-security-spa-add-new-user" options="-parameters" />
+      <module name="l1-sb-getun-starter" options="-parameters" />
       <module name="l1-spring-security-db" options="-parameters" />
     </option>
   </component>
