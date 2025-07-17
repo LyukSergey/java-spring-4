@@ -1,10 +1,8 @@
 package com.lss.l1sbprofilingstarter.anotation;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
-@Retention(RetentionPolicy.RUNTIME) // Анотація буде доступна під час виконання
-@Target(ElementType.TYPE) // Можна застосовувати лише до класів
-public @interface Profiling {}
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+public @interface Profiling {
+}
