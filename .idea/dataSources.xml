@@ -128,7 +128,7 @@
       </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="zalic_303_304_17072025" uuid="5b7b4e13-9367-482b-b9d8-16a678b5a8cb">
+    <data-source source="LOCAL" name="zalik" uuid="8ba4bbbc-8c83-439a-a541-ab6857688be0">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>

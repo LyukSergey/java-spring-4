@@ -1,0 +1,10 @@
+ **Завдання 5:** Створити ендпоінт `GET /employees/search/by-email`, який знаходить співробітника за email, **ігноруючи регістр** літер (наприклад, 'test@example.com' і 'Test@Example.com' вважаються однаковими).
+
+
+
+http://localhost:8080/employees/search/by-partial-email?partialEmail=exampl
+пошук за example
+
+http://localhost:8080/employees/search/by-email?email=конкретний_email
+пошук конкретного співробітника)
+
