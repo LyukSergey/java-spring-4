@@ -32,6 +32,7 @@ public class EmployeeController {
         return ResponseEntity.ok(employeeService.findBySalaryRange(minSalary, maxSalary));
     }
 
+    // Потрібно було повернути EmployeeDto
     @GetMapping("/sorted")
     public ResponseEntity<List<Employee>> getSortedEmployees() {
         return ResponseEntity.ok(employeeService.getSortedByDepartmentAndSalary());
