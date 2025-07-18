@@ -21,7 +21,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     private EmployeeRepository employeeRepository;
 
 
-
+    //Потрібно було створити конвертер, який перетворює Employee в EmployeeDto
+    //це покращить читабельність коду та полегшить тестування
     private EmployeeDto convertToDto(Employee employee) {
         String fullName = employee.getFirstName() + " " + employee.getLastName();
         String position = employee.getPosition();

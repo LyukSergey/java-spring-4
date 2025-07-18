@@ -19,6 +19,7 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
+    //Не повертаєш ResponseEntity<List<EmployeeDto>>
     @GetMapping
     public List<EmployeeDto> getAllEmployees() {
         return employeeService.getAllEmployees();
