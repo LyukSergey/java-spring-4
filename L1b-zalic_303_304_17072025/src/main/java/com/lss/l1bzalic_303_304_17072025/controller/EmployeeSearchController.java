@@ -19,6 +19,7 @@ public class EmployeeSearchController {
         this.employeeService = employeeService;
     }
 
+    //Правильно повертати ResponseEntity<List<EmployeeDto>>
     @GetMapping("/by-multiple-positions")
     public List<EmployeeDto> getByPositions(@RequestParam List<String> positions) {
         return employeeService.findByPositions(positions);
