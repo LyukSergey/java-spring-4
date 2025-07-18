@@ -8,4 +8,6 @@ import com.lss.l1bzalic_303_304_17072025.dto.EmployeeWithNestedDepartmentDto;
 
 public interface EmployeeService {
     EmployeeWithNestedDepartmentDto getEmployeeWithDepartmentById(Long id);
+
+    EmployeeDto changeEmployeeDepartment(Long employeeId, Long departmentId);
 }
