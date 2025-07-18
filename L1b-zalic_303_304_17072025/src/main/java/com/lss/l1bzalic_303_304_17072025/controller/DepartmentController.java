@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class DepartmentController {
     private final DepartmentService departmentService;
 
+    //Потрібно було повернути ResponseEntity<List<EmployeeDto>>
     @GetMapping("/departments/search/name-containing")
     public List<DepartmentDto> searchByNameContaining(@RequestParam String text) {
         return departmentService.findByNameContainingIgnoreCase(text);
