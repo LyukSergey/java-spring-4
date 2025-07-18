@@ -9,4 +9,3 @@ public class L1SbProfilingStarterTestApplication {
         SpringApplication.run(L1SbProfilingStarterTestApplication.class, args);
     }
 }
-
