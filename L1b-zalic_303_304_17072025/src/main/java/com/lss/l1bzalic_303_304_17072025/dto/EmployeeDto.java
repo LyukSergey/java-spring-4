@@ -16,4 +16,6 @@ public class EmployeeDto {
     private String email;
     private String position;
     private BigDecimal salary;
+    //Ти видалив поле, це не правильно
+    private String departmentName;
 }

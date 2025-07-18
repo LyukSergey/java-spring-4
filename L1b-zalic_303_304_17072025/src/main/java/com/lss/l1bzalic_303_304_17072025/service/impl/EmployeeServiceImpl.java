@@ -3,6 +3,7 @@ package com.lss.l1bzalic_303_304_17072025.service.impl;
 import com.lss.l1bzalic_303_304_17072025.dto.EmployeeDto;
 import com.lss.l1bzalic_303_304_17072025.repository.EmployeeRepository;
 import com.lss.l1bzalic_303_304_17072025.service.EmployeeService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,9 @@ import java.util.stream.Collectors;
 public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeRepository employeeRepository;
 
+    //Щоб отримати department треба @Transactional. Я додав
     @Override
+    @Transactional
     public List<EmployeeDto> getEmployeesWithUnassignedSalary() {
         return employeeRepository.findBySalaryIsNull()
                 .stream()
@@ -25,6 +28,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                         .email(employee.getEmail())
                         .position(employee.getPosition())
                         .salary(employee.getSalary())
+                        .departmentName(employee.getDepartment().getName())
                         .build())
                 .collect(Collectors.toList());
     }
