@@ -15,6 +15,9 @@ import java.util.stream.Collectors; //
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+/**
+ * Це вже трохи наглувато, запушити просто копі паст з AI Я не можу поставити тут нормальний бал
+ */
 @Service
 @RequiredArgsConstructor
 public class DepartmentServiceImpl implements DepartmentService { // Імплементуємо інтерфейс
