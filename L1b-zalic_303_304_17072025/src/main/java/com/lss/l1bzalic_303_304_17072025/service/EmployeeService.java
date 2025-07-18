@@ -18,6 +18,8 @@ public class EmployeeService {
         this.employeeRepository = employeeRepository;
     }
 
+    //Краще було зробити маппер для EmployeeDto
+    //тоді код буде чистішим і легшим для тестування
     @Transactional
     public List<EmployeeDto> findByPositions(List<String> positions) {
         return employeeRepository.findByPositionIn(positions).stream()
