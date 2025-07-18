@@ -18,4 +18,9 @@ public class EmployeeController {
     public List<EmployeeDto> getTop3EmployeesBySalary() {
         return employeeService.getTop3BySalary();
     }
+
+    @PutMapping("/{employeeId}/department/{departmentId}")
+    public EmployeeDto moveEmployeeToDepartment(@PathVariable Long employeeId, @PathVariable Long departmentId) {
+        return employeeService.moveEmployeeToDepartment(employeeId, departmentId);
+    }
 }

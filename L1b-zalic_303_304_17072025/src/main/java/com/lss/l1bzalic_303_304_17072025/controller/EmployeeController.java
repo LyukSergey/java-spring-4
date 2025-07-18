@@ -12,5 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping
 @RequiredArgsConstructor
 public class EmployeeController {
+    private final EmployeeService employeeService;
 
+    @GetMapping("/employees/search/top-2-by-position")
+    public java.util.List<EmployeeDto> getTop2ByPosition(@org.springframework.web.bind.annotation.RequestParam String position) {
+        return employeeService.findTop2ByPosition(position);
+    }
 }
