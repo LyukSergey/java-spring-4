@@ -35,7 +35,9 @@ public class Employee {
     private String email;
     private String position;
     private BigDecimal salary;
-    @ManyToOne(fetch = FetchType.EAGER)
+    //Тобі не потрібно тут нічого змінювати
+    //EAGER - тут не правильний підхід
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "department_id")
     private Department department;
 }

@@ -16,6 +16,9 @@ public class DepartmentServiceImpl implements DepartmentService {
     private final DepartmentRepository departmentRepository;
     private final EmployeeRepository employeeRepository;
 
+    //Потрібно було додати @Transactional
+    //Зараз ти отримуєш org.hibernate.LazyInitializationException
+    //http://localhost:8080/departments/by-employee/1
     @Override
     public DepartmentDto findDepartmentByEmployeeId(Long employeeId) {
         Employee employee = employeeRepository.findById(employeeId)
