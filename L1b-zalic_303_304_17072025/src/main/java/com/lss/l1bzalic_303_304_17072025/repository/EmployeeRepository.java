@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
-    List<Employee> findTop3ByOrderBySalaryDesc();
+    List<Employee> findByDepartmentIdAndPositionIn(Long departmentId, List<String> positions);
 }
