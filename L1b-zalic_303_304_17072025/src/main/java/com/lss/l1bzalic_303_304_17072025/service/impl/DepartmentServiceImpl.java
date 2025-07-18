@@ -16,6 +16,9 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public List<DepartmentDto> getAllDepartmentsSortedByName() {
+        //На стороні Java сортувати дані, ідея не дуже.
+        //Я показував різницю в часі виконання сортування в Java і в DB
+        //Воно все працює, але є проблема в перформенсі
         return departmentRepository.findAll().stream()
                 .sorted((d1, d2) -> d1.getName().compareToIgnoreCase(d2.getName()))
                 .map(department -> new DepartmentDto(department.getId(), department.getName()))
