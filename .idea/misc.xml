@@ -18,11 +18,15 @@
         <option value="$PROJECT_DIR$/l1b-maven/app-main/pom.xml" />
         <option value="$PROJECT_DIR$/L1-sb-unit-integration-tests-controller-advice/pom.xml" />
         <option value="$PROJECT_DIR$/L1b-zalic_303_304/pom.xml" />
+        <option value="$PROJECT_DIR$/jpa-palama/pom.xml" />
+        <option value="$PROJECT_DIR$/jpa-Naumenko/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/L1-spring-boot-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/jpa-palama/pom.xml" />
       </set>
     </option>
   </component>
