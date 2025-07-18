@@ -1,16 +1,13 @@
-package com.lss.l1bzalic_303_304.dto;
+package com.lss.l1bzalic_303_304_17072025.dto;
 
 import java.math.BigDecimal;
 
 public class EmployeeDto {
     private Long id;
-    private String firstName;
-    private String lastName;
+    private String fullName;
     private String position;
-    public void setFullName(String firstName) {
-        this.firstName = firstName;
-    }
-
+    private BigDecimal salary;
+    private String departmentName;
 
     public EmployeeDto(Long id, String fullName, String position, BigDecimal salary, String departmentName) {
         this.id = id;
