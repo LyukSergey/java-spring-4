@@ -21,6 +21,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeRepository employeeRepository;
     private final DepartmentRepository departmentRepository;
 
+    //Дуже великий метод
+    //потрібно розбити на менші методи
+    //додати конвертори для перетворення між сутностями та DTO
+    //покращити читабельність коду та полегшиться тестування
     @Override
     @Transactional
     public EmployeeDto createEmployee(EmployeeCreateDto dto) {
