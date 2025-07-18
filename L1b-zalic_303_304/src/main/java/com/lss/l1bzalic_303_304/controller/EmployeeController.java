@@ -10,9 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@RequestMapping("/employees")
+@RequiredArgsConstructor
 public class EmployeeController {
+
     private final EmployeeService employeeService;
 
+    @GetMapping("/search/top-3-by-salary")
+    public List<EmployeeDto> getTop3EmployeesBySalary() {
+        return employeeService.getTop3BySalary();
     @Autowired
     public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;
