@@ -14,6 +14,7 @@ public class EmployeeController {
 
     private final EmployeeService employeeService;
 
+    //Не повертаєш ResponseEntity<EmployeeDto>
     @PutMapping("/{id}")
     public EmployeeDto updateEmployee(@PathVariable Long id, @RequestBody EmployeeUpdateDto employeeUpdateDto) {
         return employeeService.updateEmployee(id, employeeUpdateDto);

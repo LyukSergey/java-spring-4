@@ -33,6 +33,10 @@ public class EmployeeServiceImpl implements EmployeeService {
                     .salary(updatedEmployee.getSalary())
                     .build();
         }
+        //Повертати null є поганою практикою
+        //потрібно було кинути exception перехопити його і повернути 404
+        //final Employee employee1 = employeeOptional.orElseThrow(
+        //() -> new RuntimeException(String.format("Employee with id %s not found", id)));
         return null;
     }
 }
