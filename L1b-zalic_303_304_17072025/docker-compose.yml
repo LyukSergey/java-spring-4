@@ -1,4 +1,4 @@
-docversion: '3'
+version: '3.8'
 services:
   postgres:
     image: postgres:14
@@ -7,4 +7,4 @@ services:
       POSTGRES_USER: demo_user
       POSTGRES_PASSWORD: demo_pass
     ports:
-      - "5432:5432"
+      - "8080:8080"
