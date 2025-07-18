@@ -9,17 +9,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/employees")
-@RequiredArgsConstructor
 public class EmployeeController {
 
     private final EmployeeService employeeService;
 
-    @GetMapping("/search/by-email")
-    public ResponseEntity<EmployeeDto> findByEmail(@RequestParam String email) {
-        return employeeService.findByEmail(email)
-                .map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
+    public EmployeeController(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
+
+    @GetMapping("/search/lastname-starts-with")
+    public ResponseEntity<List<EmployeeDto>> searchEmployeesByLastNamePrefix(
+            @RequestParam("prefix") String prefix) {
+        List<EmployeeDto> employees = employeeService.findEmployeesByLastNameStartingWith(prefix);
+        if (employees.isEmpty()) {
+            return ResponseEntity.noContent().build(); // Or ResponseEntity.ok(employees) for an empty list
+        }
+        return ResponseEntity.ok(employees);
     }
 }

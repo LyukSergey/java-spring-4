@@ -13,9 +13,12 @@ import lombok.Setter;
 public class EmployeeDto {
 
     private Long id;
-    private String fullName;
+    private String firstName;
+    private String lastName;
     private String position;
-    private BigDecimal salary;
-    private String departmentName;
+    public void setFullName(String firstName) {
+        this.firstName = firstName;
+    }
+
 
 }
