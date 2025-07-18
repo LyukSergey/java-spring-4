@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
-    @EntityGraph(attributePaths = "department")
+    //Поки ми не використовуємо @EntityGraph
+//    @EntityGraph(attributePaths = "department")
     List<Employee> findTop2ByPositionOrderBySalaryDesc(String position);
 }
