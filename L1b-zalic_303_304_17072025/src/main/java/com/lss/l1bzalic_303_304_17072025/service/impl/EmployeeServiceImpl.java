@@ -18,7 +18,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     private EmployeeRepository employeeRepository;
 
 
-
+    //Краще це було б винести в окремий мапер.
+    //Це б підвищило читабельність коду і полегшило тестування
     private EmployeeDto convertToDto(Employee employee) {
         String fullName = employee.getFirstName() + " " + employee.getLastName();
         String position = employee.getPosition();
