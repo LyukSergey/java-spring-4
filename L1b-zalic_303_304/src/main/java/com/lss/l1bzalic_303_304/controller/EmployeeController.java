@@ -23,8 +23,11 @@ public class EmployeeController {
     @GetMapping("/search/top-3-by-salary")
     public List<EmployeeDto> getTop3EmployeesBySalary() {
         return employeeService.getTop3BySalary();
+    }
+
     @GetMapping("/search/by-email")
     public ResponseEntity<Optional<EmployeeDto>> findByEmail(@RequestParam String email) {
         return ResponseEntity.ok(employeeService.findByEmail(email));
     }
 }
+

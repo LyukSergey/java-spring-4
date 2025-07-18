@@ -13,5 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping
 @RequiredArgsConstructor
 public class DepartmentController {
+    private final DepartmentService departmentService;
 
+    @GetMapping("/departments")
+    public ResponseEntity<List<DepartmentDto>> getAllDepartments() {
+        return ResponseEntity.ok(departmentService.findAllSortedByName());
+    }
 }

@@ -10,5 +10,12 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class DepartmentServiceImpl implements DepartmentService {
+    private final DepartmentRepository departmentRepository;
 
+    @Override
+    public List<DepartmentDto> findAllSortedByName() {
+        return departmentRepository.findAllByOrderByNameAsc().stream()
+                .map(dep -> new DepartmentDto(dep.getId(), dep.getName()))
+                .toList();
+    }
 }
