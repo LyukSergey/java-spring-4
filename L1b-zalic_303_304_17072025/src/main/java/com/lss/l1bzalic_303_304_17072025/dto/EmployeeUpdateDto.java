@@ -1,6 +1,10 @@
 package com.lss.l1bzalic_303_304_17072025.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 
@@ -9,11 +13,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class EmployeeDto {
-    private Long id;
-    private String firstName;
-    private String lastName;
-    private String email;
+public class EmployeeUpdateDto {
     private String position;
     private BigDecimal salary;
 }
