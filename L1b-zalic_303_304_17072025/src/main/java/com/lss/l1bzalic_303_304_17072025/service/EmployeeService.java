@@ -1,8 +1,32 @@
 package com.lss.l1bzalic_303_304_17072025.service;
 
 import com.lss.l1bzalic_303_304_17072025.dto.EmployeeDto;
-import java.util.List;
+import com.lss.l1bzalic_303_304_17072025.entity.Employee;
+import com.lss.l1bzalic_303_304_17072025.repository.EmployeeRepository;
+import org.springframework.stereotype.Service;
 
-public interface EmployeeService {
+import java.util.List;
+import java.util.stream.Collectors;
+
+
+@Service
+public class EmployeeService {
+    private final EmployeeRepository employeeRepository;
+
+    public EmployeeService(EmployeeRepository employeeRepository) {
+        this.employeeRepository = employeeRepository;
+    }
+
+    public List<EmployeeDto> findByPositions(List<String> positions) {
+        return employeeRepository.findByPositionIn(positions).stream()
+                .map(emp -> new EmployeeDto(
+                        emp.getFirstName(),
+                        emp.getLastName(),
+                        emp.getPosition(),
+                        emp.getSalary()
+                ))
+                .collect(Collectors.toList());
+    }
 
 }
+

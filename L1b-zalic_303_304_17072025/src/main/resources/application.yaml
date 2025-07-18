@@ -9,7 +9,8 @@ spring:
   jpa:
     hibernate:
       ddl-auto: validate
-    show-sql: true
+
+      ddl-auto=create:show-sql: true
     open-in-view: false
   liquibase:
     change-log: classpath:/db/changelog/db.changelog-master.xml
