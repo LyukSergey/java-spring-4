@@ -16,6 +16,9 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
+//Клас дежу великий, що дуже погіршує його читабельність
+//і тестування. Потрібно сстворити окремий мапер
+//для того щоб конвертувати з Entity в Dto і навнаки
 public class EmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeRepository employeeRepository;

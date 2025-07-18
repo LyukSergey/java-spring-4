@@ -17,6 +17,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     @Query("SELECT e FROM Employee e LEFT JOIN FETCH e.department")
     List<Employee> findAllWithDepartments();
 
+    //department - це не обовязкове поле в Dto, тому LEFT JOIN FETCH e.departmen тут лишній
     @Query("SELECT e FROM Employee e LEFT JOIN FETCH e.department WHERE LOWER(e.email) = LOWER(:email)")
     Optional<Employee> findByEmailIgnoreCaseWithDepartment(String email);
 

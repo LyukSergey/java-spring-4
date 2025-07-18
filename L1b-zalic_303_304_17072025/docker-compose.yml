@@ -1,10 +1,17 @@
+#В цьому файлі нічого змінбвати не потрбіно було
+#Все вже було налаштовано
+#Повернув все як було
 version: '3.8'
 services:
   postgres:
-    image: postgres:latest
+#    image: postgres:latest
+    image: postgres:14
     environment:
-      POSTGRES_DB: employees_db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+#      POSTGRES_DB: employees_db
+      POSTGRES_DB: l1b-zalic_303_304_db
+#      POSTGRES_USER: postgres
+      POSTGRES_USER: demo_user
+      POSTGRES_PASSWORD: demo_pass
+#      POSTGRES_PASSWORD: postgres
     ports:
       - "5432:5432"
