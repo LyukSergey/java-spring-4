@@ -13,6 +13,9 @@ import java.util.List;
 public class EmployeeController {
 
     private final EmployeeService employeeService;
+    public EmployeeController(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
 
     @GetMapping("/search/top-3-by-salary")
     public List<EmployeeDto> getTop3EmployeesBySalary() {
