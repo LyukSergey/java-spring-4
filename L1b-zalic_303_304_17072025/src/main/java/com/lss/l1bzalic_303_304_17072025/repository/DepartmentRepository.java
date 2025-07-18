@@ -2,8 +2,12 @@ package com.lss.l1bzalic_303_304_17072025.repository;
 
 import com.lss.l1bzalic_303_304_17072025.entity.Department;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository; // Рекомендується додати @Repository анотацію
+import java.util.List; // Не забудьте імпортувати List
 
+@Repository
 public interface DepartmentRepository extends JpaRepository<Department, Long> {
-
+    List<Department> findByNameContainingIgnoreCase(String text);
 }
+
 
