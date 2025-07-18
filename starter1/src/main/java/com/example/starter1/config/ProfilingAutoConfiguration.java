@@ -1,10 +1,12 @@
-package config;
+package com.example.starter1.config;
 
-import beanPostProcessor.ProfilingBeanPostProcessor;
+import com.example.starter1.beanPostProcessor.ProfilingBeanPostProcessor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+
 
 @Configuration
 @EnableConfigurationProperties(ProfilingProperties.class)
@@ -12,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 public class ProfilingAutoConfiguration {
 
     @Bean
-    public ProfilingBeanPostProcessor profilingBeanPostProcessor() {
-        return new ProfilingBeanPostProcessor();
+    public ProfilingBeanPostProcessor profilingBeanPostProcessor(ProfilingProperties properties) {
+        return new ProfilingBeanPostProcessor(properties);
     }
 }

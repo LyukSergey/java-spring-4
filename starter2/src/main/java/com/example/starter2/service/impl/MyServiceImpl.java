@@ -1,39 +1,39 @@
 package com.example.starter2.service.impl;
 
-import anotation.Profiling;
+import com.example.starter1.anotation.Profiling;
 import com.example.starter2.service.MyService;
-import com.example.starter2.service.TransactionalTestService;
-import jakarta.annotation.PostConstruct;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
 
 @Service
 @Profiling
-@RequiredArgsConstructor
 public class MyServiceImpl implements MyService {
-
-    private final TransactionalTestService transactionalTestService;
-
-    @Override
-    @PostConstruct
-    public void warmUp() {
-        System.out.println("Починаю розігрів...");
-        try {
-            Thread.sleep(100); // Імітуємо розігрів 100мс = 0,1c
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.println("Розігрів завершено.");
-    }
 
     @Override
     public void doWork() {
         System.out.println("Виконую важливу роботу...");
-        transactionalTestService.transactionalTestMethod();
         try {
-            Thread.sleep(100); // Імітуємо роботу 100мс = 0,1c
+            // Імітуємо роботу
+            Thread.sleep(100);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.currentThread().interrupt();
         }
+        System.out.println("Роботу завершено.");
+    }
+
+    @Override
+    public String processText(String text, int repetitions) {
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < repetitions; i++) {
+            result.append(text);
+            try {
+                Thread.sleep(15);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+
+        return result.toString();
     }
 }
