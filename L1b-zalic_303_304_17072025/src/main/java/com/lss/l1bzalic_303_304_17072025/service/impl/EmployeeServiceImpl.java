@@ -16,6 +16,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeRepository employeeRepository;
 
     //Щоб отримати department треба @Transactional. Я додав
+    //Ще треба було зробити окремий мапер для EmployeeDto
+    //Це б покращило читабельність коду і полегшило тестування
     @Override
     @Transactional
     public List<EmployeeDto> getEmployeesWithUnassignedSalary() {
