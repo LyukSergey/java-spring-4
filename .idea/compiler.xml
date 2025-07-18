@@ -13,21 +13,18 @@
         <module name="PZ-start" />
         <module name="L1-sb-unit-integration-tests-controller-advice" />
         <module name="app-data" />
-        <module name="L1-sb-unit-integration-tests-controller-advice" />
-        <module name="app-data" />
       </profile>
       <profile name="Annotation profile for L1-spring-boot" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
         <module name="L1-spring-boot" />
       </profile>
-      <profile name="Annotation profile for PZ-starter-test" enabled="true">
-      <profile name="Annotation profile for L1b-zalic_303_304_17072025" enabled="true">
+      <profile name="Annotation profile for l1-spring-security-db" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -37,29 +34,19 @@
         <module name="L1b-zalic_303_304_17072025" />
         <module name="L1-spring-boot-security" />
         <module name="L1-spring-boot-security-spa-add-new-user" />
-        <module name="L1-sb-profiling-starter-test" />
         <module name="L1-spring-boot-security-spa" />
+        <module name="L1-sb-profiling-starter-test" />
         <module name="L1-sb-data-jpa" />
-        <module name="PZ-starter-test" />
         <module name="l1-spring-security-db" />
+        <module name="PZ-starter-test" />
         <module name="Pz-jpa" />
         <module name="L1b-zalic_303_304" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="PZ-statrers.main" target="17" />
-      <module name="L1-keylockdemo" target="17" />
-      <module name="L1-sb-data-jpa-test" target="17" />
-      <module name="PZ-statrers.test" target="17" />
-      <module name="test-securityhupalo" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="L1-SB" options="-parameters" />
-      <module name="L1-keylockdemo" options="-parameters" />
       <module name="L1-sb-data-jpa" options="-parameters" />
-      <module name="L1-sb-data-jpa-test" options="-parameters" />
       <module name="L1-sb-profiling-starter" options="-parameters" />
       <module name="L1-sb-profiling-starter-test" options="-parameters" />
       <module name="L1-sb-unit-integration-tests-controller-advice" options="-parameters" />
@@ -68,15 +55,14 @@
       <module name="L1-spring-boot-security-spa" options="-parameters" />
       <module name="L1-spring-boot-security-spa-add-new-user" options="-parameters" />
       <module name="L1b-zalic_303_304" options="-parameters" />
+      <module name="L1b-zalic_303_304_17072025" options="-parameters" />
       <module name="PZ-start" options="-parameters" />
       <module name="PZ-starter-test" options="-parameters" />
       <module name="Pz-jpa" options="-parameters" />
-      <module name="L1b-zalic_303_304_17072025" options="-parameters" />
       <module name="app-data" options="-parameters" />
       <module name="app-main" options="-parameters" />
       <module name="app-maven-plugin" options="-parameters" />
       <module name="l1-spring-security-db" options="-parameters" />
-      <module name="test-securityhupalo" options="-parameters" />
     </option>
   </component>
 </project>
