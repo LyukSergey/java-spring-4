@@ -16,8 +16,8 @@
         <option value="$PROJECT_DIR$/L1-sb-data-jpa/pom.xml" />
         <option value="$PROJECT_DIR$/l1b-maven/pom.xml" />
         <option value="$PROJECT_DIR$/l1b-maven/app-main/pom.xml" />
-        <option value="$PROJECT_DIR$/L1b-zalic_303_304/pom.xml" />
         <option value="$PROJECT_DIR$/L1-sb-unit-integration-tests-controller-advice/pom.xml" />
+        <option value="$PROJECT_DIR$/L1b-zalic_303_304/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -106,7 +106,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_24" default="true" project-jdk-name="corretto-21" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="corretto-21" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

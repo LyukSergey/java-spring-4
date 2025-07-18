@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/L1-sb-profiling-starter/MyStartert/MyStartert.iml" filepath="$PROJECT_DIR$/L1-sb-profiling-starter/MyStartert/MyStartert.iml" />
-      <module fileurl="file://$PROJECT_DIR$/L1-sb-profiling-starter/demo/demo.iml" filepath="$PROJECT_DIR$/L1-sb-profiling-starter/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/l1b-maven/app-main/app-main.iml" filepath="$PROJECT_DIR$/l1b-maven/app-main/app-main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/java-spring-4.iml" filepath="$PROJECT_DIR$/.idea/java-spring-4.iml" />
     </modules>
   </component>

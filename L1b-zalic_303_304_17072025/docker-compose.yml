@@ -3,8 +3,8 @@ services:
   postgres:
     image: postgres:14
     environment:
-      POSTGRES_DB: l1-spring-security_db
+      POSTGRES_DB: l1b-zalic_303_304_db
       POSTGRES_USER: demo_user
-      POSTGRES_PASSWORD: demo_password
+      POSTGRES_PASSWORD: demo_pass
     ports:
-      - "8081:8081"
+      - "5432:5432"
