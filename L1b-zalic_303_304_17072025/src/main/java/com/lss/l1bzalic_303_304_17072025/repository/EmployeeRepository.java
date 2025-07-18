@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
-    List<Employee> findTop3ByOrderBySalaryDesc();
+    boolean existsByFirstNameAndLastName(String firstName, String lastName);
 }
