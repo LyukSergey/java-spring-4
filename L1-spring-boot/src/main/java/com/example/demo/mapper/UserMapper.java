@@ -11,7 +11,7 @@ public class UserMapper {
             return null;
         }
 
-        UserDto userDto = new UserDto();
+        UserDto userDto = new UserDto(user.getId(), user.getName(), user.getSurname(), user.getBank().getName());
         userDto.setId(user.getId());
         userDto.setName(user.getName());
         userDto.setSurname(user.getSurname());

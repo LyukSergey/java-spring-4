@@ -1,7 +1,7 @@
 package com.lss.l1sbdatajpa.service;
 
+import com.example.demo.dto.UserDto;
 import com.example.demo.service.BankManagementService;
-import com.lss.l1sbdatajpa.dto.UserDto;
 import com.lss.l1sbdatajpa.mapper.UserMapper;
 import com.lss.l1sbdatajpa.repository.BankRepository;
 import com.lss.l1sbdatajpa.repository.UserRepository;

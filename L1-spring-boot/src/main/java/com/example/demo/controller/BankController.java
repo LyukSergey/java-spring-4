@@ -5,7 +5,11 @@ import com.example.demo.dto.UserRegistrationDto;
 import com.example.demo.entity.User;
 import com.example.demo.service.BankManagementService;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class BankController {
 
+    @Qualifier("bankManagementService")
     private final BankManagementService bankService;
 
     // Ендпоінт для реєстрації користувача
@@ -38,6 +43,12 @@ public class BankController {
 
     @GetMapping("/{bankId}/users")
     public ResponseEntity<List<UserDto>> getUsersByBank(@PathVariable Long bankId) {
-        return ResponseEntity.ok(bankService.getUsersByBank(bankId));
+        List<User> users = bankService.getUsersByBank(bankId);
+
+        List<UserDto> userDtos = users.stream()
+                .map(user -> new UserDto(user.getId(), user.getName(),user.getSurname(),user.getBank().getName()))// приклад
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok(userDtos);
     }
 }

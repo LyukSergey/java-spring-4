@@ -27,7 +27,6 @@ class FleetControllerIT extends BaseControllerIntegrationTest {
                 .andExpect(jsonPath("$[0].objective").value(mission.getObjective()))
                 .andExpect(jsonPath("$[0].status").value(mission.getStatus().name()));
     }
-
     @Test
     @SneakyThrows
     void getMissionByIdShouldReturnResourceNotFoundIfMissionIsNotFound() {
