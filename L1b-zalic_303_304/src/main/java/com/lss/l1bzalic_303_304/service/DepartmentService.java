@@ -6,4 +6,6 @@ import java.util.List;
 public interface DepartmentService {
 
     List<DepartmentDto> findAll();
+
+    long countEmployeesInDepartment(Long id);
 }

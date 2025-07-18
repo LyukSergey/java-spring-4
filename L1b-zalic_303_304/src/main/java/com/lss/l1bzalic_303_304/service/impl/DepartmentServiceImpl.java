@@ -13,6 +13,9 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     private final DepartmentRepository departmentRepository;
 
+    public long countEmployeesInDepartment(Long departmentId) {
+        return departmentRepository.countEmployeesByDepartmentId(departmentId);
+    }
     @Override
     public List<DepartmentDto> findAll() {
         return departmentRepository.findAll().stream()
