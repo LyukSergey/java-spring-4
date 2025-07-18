@@ -20,6 +20,7 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
+    //Потрібно було повернути ResponseEntity<List<EmployeeDto>>
     @GetMapping
     public List<EmployeeDto> getAllEmployees() {
         return employeeService.getAllEmployees();
