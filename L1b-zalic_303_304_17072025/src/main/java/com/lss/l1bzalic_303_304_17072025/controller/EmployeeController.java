@@ -12,5 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping
 @RequiredArgsConstructor
 public class EmployeeController {
+    private final EmployeeService employeeService;
 
+    @GetMapping("/employees/search/by-salary-range")
+    public List<EmployeeDto> getEmployeesBySalaryRange(
+            @org.springframework.web.bind.annotation.RequestParam("minSalary") java.math.BigDecimal minSalary,
+            @org.springframework.web.bind.annotation.RequestParam("maxSalary") java.math.BigDecimal maxSalary) {
+        return employeeService.findBySalaryRange(minSalary, maxSalary);
+    }
 }
