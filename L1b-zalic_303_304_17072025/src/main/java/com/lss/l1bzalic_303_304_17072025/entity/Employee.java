@@ -35,7 +35,7 @@ public class Employee {
     private String email;
     private String position;
     private BigDecimal salary;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "department_id")
     private Department department;
 }
