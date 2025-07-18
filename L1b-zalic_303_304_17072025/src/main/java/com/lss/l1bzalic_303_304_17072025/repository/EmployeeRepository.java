@@ -8,4 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     List<Employee> findTop3ByOrderBySalaryDesc();
+
+    @org.springframework.data.jpa.repository.Query("SELECT e FROM Employee e JOIN FETCH e.department WHERE e.id = :id")
+    java.util.Optional<Employee> findByIdWithDepartment(Long id);
 }
