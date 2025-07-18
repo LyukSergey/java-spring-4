@@ -1,0 +1,10 @@
+docversion: '3'
+services:
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: l1b-zalic_303_304_db
+      POSTGRES_USER: demo_user
+      POSTGRES_PASSWORD: demo_pass
+    ports:
+      - "5432:5432"
