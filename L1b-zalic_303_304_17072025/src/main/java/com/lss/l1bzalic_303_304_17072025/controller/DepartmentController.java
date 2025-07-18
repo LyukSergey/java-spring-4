@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 public class DepartmentController {
     private final EmployeeService employeeService;
 
+    //Обовязково треба поверати ResponseEntity<List<EmployeeDto>>
     @GetMapping("/{id}/employees/by-positions")
     public List<EmployeeDto> getEmployeesByPositions(
             @PathVariable Long id,

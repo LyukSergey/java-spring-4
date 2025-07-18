@@ -14,6 +14,8 @@ import java.util.stream.Collectors;
 public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeRepository employeeRepository;
 
+    //Не додав @Transactional і отримуєш org.hibernate.LazyInitializationException
+    //http://localhost:8080/departments/1/employees/by-positions?positions=Java%20Developer
     @Override
     public List<EmployeeDto> getEmployeesByDepartmentAndPositions(Long departmentId, List<String> positions) {
         return employeeRepository.findByDepartmentIdAndPositionIn(departmentId, positions)
