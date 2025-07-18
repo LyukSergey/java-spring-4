@@ -12,6 +12,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     List<User> findAllByBankId(Long bankId);
 
+
     @Query("SELECT u FROM User u WHERE u.name = :name")
     List<User> findUsersByNameHQL(@Param("name") String name);
 
@@ -20,5 +21,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     @Query(value = "SELECT * FROM users WHERE bank_id = :bankId ORDER BY LENGTH(surname) DESC LIMIT 1", nativeQuery = true)
     Optional<User> findTopUserWithLongestSurnameByBankId(@Param("bankId") Long bankId);
+
 
 }
