@@ -23,12 +23,28 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public List<EmployeeDto> getTop3BySalary() {
+        return employeeRepository.findTop3ByOrderBySalaryDesc()
         return employeeMapper.toDtoList(employeeRepository.findTop3ByOrderBySalaryDesc());
     }
     @Override
     public List<EmployeeDto> findByPosition(String position) {
         return employeeRepository.findByPosition(position)
                 .stream()
+                .map(this::mapToDto)
+                .collect(Collectors.toList());
+    }
+
+    private EmployeeDto mapToDto(Employee employee) {
+        String fullName = employee.getFirstName() + " " + employee.getLastName();
+        String departmentName = employee.getDepartment() != null ? employee.getDepartment().getName() : null;
+
+        return new EmployeeDto(
+                employee.getId(),
+                fullName,
+                employee.getPosition(),
+                employee.getSalary(),
+                departmentName
+        );
                 .map(employee -> new EmployeeDto(
                         employee.getId(),
                         employee.getFirstName() + " " + employee.getLastName(),
