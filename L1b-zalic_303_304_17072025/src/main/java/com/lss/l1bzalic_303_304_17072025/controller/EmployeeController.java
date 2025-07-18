@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class EmployeeController {
 
+    // Виклик репозиторія з контроллера це дуже погана практика
+    // тобі треба було створити сервіс, який буде викликати репозиторій
     private final EmployeeRepository employeeRepository;
 
     @GetMapping("/check/exists")
