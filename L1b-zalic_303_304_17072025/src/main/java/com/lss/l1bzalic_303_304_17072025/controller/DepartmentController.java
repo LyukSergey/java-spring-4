@@ -17,6 +17,11 @@ public class DepartmentController {
 
     private final DepartmentService departmentService;
 
+//    Завдання 9: Створити ендпоінт GET /employees/{id},
+//    який повертає EmployeeWithNestedDepartmentDto — DTO,
+//    що містить всю інформацію про співробітника та вкладений об'єкт
+//    DepartmentDto з даними його відділу.
+    //Це завдання не відповідає умові, поки 0 балів
     @GetMapping
     public List<DepartmentWithCountDto> getAllDepartments() {
         return departmentService.getAllDepartmentsWithEmployeeCount();
