@@ -8,7 +8,8 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface DepartmentRepository extends JpaRepository<Department, Long> {
-    @Query("SELECT d FROM Department d WHERE SIZE(d.employees) > :count")
+    //Треба було використати >=
+    @Query("SELECT d FROM Department d WHERE SIZE(d.employees) >= :count")
     List<Department> findDepartmentsWithEmployeesMoreThan(@Param("count") int count);
 }
 
