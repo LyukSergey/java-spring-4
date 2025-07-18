@@ -18,6 +18,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
 
+    //Краще було б convertToDto() - винести в окремий маппер
+    // Це б покращило читабельність коду та спростило тестування
     @Override
     @Transactional
     public List<EmployeeDto> searchByName(String name) {
