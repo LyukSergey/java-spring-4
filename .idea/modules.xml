@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/l1b-maven/app-main/app-main.iml" filepath="$PROJECT_DIR$/l1b-maven/app-main/app-main.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/java-spring-4.iml" filepath="$PROJECT_DIR$/.idea/java-spring-4.iml" />
       <module fileurl="file://$PROJECT_DIR$/voitenko/voitenko.iml" filepath="$PROJECT_DIR$/voitenko/voitenko.iml" />
