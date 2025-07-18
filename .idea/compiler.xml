@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/untitled/src/main/resources/archetype-resources" includeSubdirectories="true" />
+    </excludeFromCompile>
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
       <profile name="Gradle Imported" enabled="true">
@@ -20,7 +23,7 @@
         <module name="L1-sb-unit-integration-tests-controller-advice" />
         <module name="app-data" />
       </profile>
-      <profile name="Annotation profile for L1b-zalic_303_304" enabled="true">
+      <profile name="Annotation profile for L1b-zalic_303_304_17072025" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />

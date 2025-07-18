@@ -18,6 +18,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeRepository employeeRepository;
     private final DepartmentRepository departmentRepository;
 
+    //Метод є досить великим. Треба було створити додатковий мапер
+    //Для конвертації в Employee та в EmployeeDto
+    //Це б підвищило читабельність коду і полегшить його тестування
     @Override
     @Transactional
     public EmployeeDto createEmployee(EmployeeCreateDto dto) {
