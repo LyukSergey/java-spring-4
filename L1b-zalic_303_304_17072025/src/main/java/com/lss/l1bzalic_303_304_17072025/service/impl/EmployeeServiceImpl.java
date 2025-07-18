@@ -12,6 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class EmployeeServiceImpl implements EmployeeService {
 
+    //Немає імплементації
     @Override
     public List<EmployeeDto> searchEmployeesByName(String name) {
         return List.of();

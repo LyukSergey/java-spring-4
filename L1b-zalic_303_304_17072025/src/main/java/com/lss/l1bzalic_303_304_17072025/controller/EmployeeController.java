@@ -27,8 +27,9 @@ public class EmployeeController {
 
         List<EmployeeDto> employees = employeeService.searchEmployeesByName(name);
 
-
         if (employees.isEmpty()) {
+            //ResponseEntity.noContent() - повертається для REST методів, які не повертають тіло відповіді, але вказують на те, що запит був успішним.
+            //ResponseEntity<Void>
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(employees);
