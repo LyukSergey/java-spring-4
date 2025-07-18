@@ -1,6 +1,5 @@
 package com.lss.l1bzalic_303_304_17072025.entity;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -10,15 +9,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.math.BigDecimal;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-
-import jakarta.persistence.*;
-
+//Не можна просто так змінювати ентіті, тому що тобі вони не зручні
 @Entity
 @Table(name = "employees")
 public class Employee {
@@ -33,19 +25,21 @@ public class Employee {
     private String position;
     private BigDecimal salary;
 
-    @Column(name = "department_id")
-    private Integer departmentId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "department_id")
+    private Department department;
 
     // --- Конструктори ---
-    public Employee() {}
+    public Employee() {
+    }
 
-    public Employee(String firstName, String lastName, String email, String position, BigDecimal salary, Integer departmentId) {
+    public Employee(String firstName, String lastName, String email, String position, BigDecimal salary, Department departmentId) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.position = position;
         this.salary = salary;
-        this.departmentId = departmentId;
+        this.department = departmentId;
     }
 
 
@@ -97,11 +91,12 @@ public class Employee {
         this.salary = salary;
     }
 
-    public Integer getDepartmentId() {
-        return departmentId;
+    public Department getDepartment() {
+        return department;
     }
 
-    public void setDepartmentId(Integer departmentId) {
-        this.departmentId = departmentId;
+    public void setDepartment(Department department) {
+        this.department = department;
     }
+
 }

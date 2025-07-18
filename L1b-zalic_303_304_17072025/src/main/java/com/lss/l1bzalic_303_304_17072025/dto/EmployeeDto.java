@@ -7,12 +7,14 @@ public class EmployeeDto {
     private String lastName;
     private String position;
     private BigDecimal salary;
+    private String departmentName;
 
-    public EmployeeDto(String firstName, String lastName, String position, BigDecimal salary) {
+    public EmployeeDto(String firstName, String lastName, String position, BigDecimal salary, String departmentName) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.position = position;
         this.salary = salary;
+        this.departmentName = departmentName;
     }
 
     // Геттери і сеттери
@@ -31,5 +33,9 @@ public class EmployeeDto {
 
     public BigDecimal getSalary() {
         return salary;
+    }
+
+    public String getDepartmentName() {
+        return departmentName;
     }
 }
