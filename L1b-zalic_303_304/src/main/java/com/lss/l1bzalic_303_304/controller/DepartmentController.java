@@ -20,6 +20,10 @@ public class DepartmentController {
     public ResponseEntity<List<DepartmentDto>> getAllDepartments() {
         return ResponseEntity.ok(departmentService.findAll());
     }
+    //Завдання 24: Створити ендпоінт GET /departments/without-employees,
+    // який знаходить і повертає List<DepartmentDto> всіх відділів,
+    // у яких немає жодного співробітника.
+    // Твоя імплементація не відповідає завданню
     @GetMapping("/{id}/employees/count")
     public long countEmployees(@PathVariable Long id) {
         return departmentService.countEmployeesInDepartment(id);
