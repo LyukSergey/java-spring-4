@@ -11,14 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping
+@RequestMapping("/departments")
 @RequiredArgsConstructor
 public class DepartmentController {
-private final DepartmentService departmentService;
+    private final DepartmentService departmentService;
 
-@GetMapping("/by-empoloyee/{id}")
-    public ResponseEntity<DepartmentDto> getDepartmentByEmployeeId(@PathVariable Long id) {
-    DepartmentDto departmentDto = departmentService.findDepartmentByEmployeeId(id);
-    return ResponseEntity.ok(departmentDto);
-}
+    @GetMapping("/by-employee/{id}")
+    public ResponseEntity<DepartmentDto> getDepartmentByEmployee(@PathVariable("id") Long employeeId) {
+        return ResponseEntity.ok(departmentService.getDepartmentByEmployeeId(employeeId));
+    }
 }
