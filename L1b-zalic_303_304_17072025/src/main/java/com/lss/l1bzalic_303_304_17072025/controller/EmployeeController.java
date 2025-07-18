@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping
+//Пропустив /employees. Це не повністю відповідає задачі
+@RequestMapping("/employees")
 @RequiredArgsConstructor
 public class EmployeeController {
     private final EmployeeService employeeService;

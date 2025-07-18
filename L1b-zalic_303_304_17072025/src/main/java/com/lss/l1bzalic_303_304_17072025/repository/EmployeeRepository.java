@@ -7,6 +7,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
-    @org.springframework.data.jpa.repository.Query("SELECT e FROM Employee e JOIN FETCH e.department WHERE e.position = :position ORDER BY e.salary DESC")
-    List<Employee> findTop2ByPositionOrderBySalaryDesc(@org.springframework.data.repository.query.Param("position") String position, org.springframework.data.domain.Pageable pageable);
+    //Лишнє - JOIN FETCH e.department
+    //Лишнє - org.springframework.data.domain.Pageable pageable
+    //Це не відноситься до завдання
+//    @org.springframework.data.jpa.repository.Query("SELECT e FROM Employee e JOIN FETCH e.department WHERE e.position = :position ORDER BY e.salary DESC")
+    List<Employee> findTop2ByPositionOrderBySalaryDesc(@org.springframework.data.repository.query.Param("position") String position/*, org.springframework.data.domain.Pageable pageable*/);
 }
