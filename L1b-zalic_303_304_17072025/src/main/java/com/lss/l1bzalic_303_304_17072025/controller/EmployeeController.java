@@ -26,4 +26,9 @@ public class EmployeeController {
         return ResponseEntity.ok(created);
     }
 
+    @GetMapping("/employees/search/by-email")
+    public ResponseEntity<java.util.Optional<EmployeeDto>> findByEmail(String email) {
+        return ResponseEntity.ok(employeeService.findByEmail(email));
+    }
+
 }

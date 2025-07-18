@@ -40,4 +40,16 @@ public class EmployeeServiceImpl implements EmployeeService {
                 department.getName()
         );
     }
+
+    @Override
+    public java.util.Optional<EmployeeDto> findByEmail(String email) {
+        return employeeRepository.findByEmail(email)
+                .map(emp -> new EmployeeDto(
+                        emp.getId(),
+                        emp.getFirstName() + " " + emp.getLastName(),
+                        emp.getPosition(),
+                        emp.getSalary(),
+                        emp.getDepartment() != null ? emp.getDepartment().getName() : null
+                ));
+    }
 }
