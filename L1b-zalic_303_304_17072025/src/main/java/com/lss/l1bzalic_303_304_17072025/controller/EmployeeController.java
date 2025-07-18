@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class EmployeeController {
     private final EmployeeService employeeService;
 
+    //Не повертаєш ResponseEntity<List<EmployeeDto>>
     @GetMapping("/search/by-name")
     public List<EmployeeDto> searchEmployeesByName(@RequestParam("name") String name) {
         return employeeService.searchEmployeesByName(name);
