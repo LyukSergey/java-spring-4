@@ -10,5 +10,13 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class DepartmentServiceImpl implements DepartmentService {
+    private final DepartmentRepository departmentRepository;
 
+    @Override
+    public List<DepartmentDto> findDepartmentsWithEmployeesMoreThan(int count) {
+        return departmentRepository.findAllWithEmployees().stream()
+            .filter(dep -> dep.getEmployees() != null && dep.getEmployees().size() > count)
+            .map(dep -> new DepartmentDto(dep.getId(), dep.getName()))
+            .toList();
+    }
 }
