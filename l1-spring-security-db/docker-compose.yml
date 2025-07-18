@@ -7,4 +7,4 @@ services:
       POSTGRES_USER: demo_user
       POSTGRES_PASSWORD: demo_password
     ports:
-      - "5433:5432"
+      - "8081:8081"
