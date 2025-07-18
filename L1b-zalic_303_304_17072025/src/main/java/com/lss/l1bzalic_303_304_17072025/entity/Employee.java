@@ -44,6 +44,8 @@ public class Employee {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "department_id")
-    @JsonIgnoreProperties("employees")
+    //цього тут не треба взігалі
+    //не розумію для чого ти це додавав
+//    @JsonIgnoreProperties("employees")
     private Department department;
 }

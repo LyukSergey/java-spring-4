@@ -14,5 +14,6 @@ public class EmployeeDto {
     private String fullName;
     private String position;
     private BigDecimal salary;
+    private String email;
     private String departmentName;
 }

@@ -24,8 +24,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Transactional(readOnly = true)
     public EmployeeDto findByEmailDto(String email) {
-        Employee employee = employeeRepository.findByEmailIgnoreCase(email);
-        return employee != null ? convertToDto(employee) : null;
+        final Employee employee = employeeRepository.findByEmailIgnoreCase(email)
+                .orElseThrow(() -> new RuntimeException("Employee not found with email: " + email));
+        return /*employee != null ? */convertToDto(employee) /*: null*/;
     }
 
     @Transactional(readOnly = true)
@@ -41,6 +42,10 @@ public class EmployeeServiceImpl implements EmployeeService {
                 employee.getFirstName() + " " + employee.getLastName(),
                 employee.getPosition(),
                 employee.getSalary(),
+                //Коли ти викликаєш
+                ///employees/search/by-email
+                //то в респонзі повинен бути email, для перевірки що тобі повернулись правильні дані
+                employee.getEmail(),
                 employee.getDepartment() != null ? employee.getDepartment().getName() : null
         );
     }

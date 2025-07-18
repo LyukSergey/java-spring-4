@@ -27,11 +27,13 @@ public class EmployeeController {
     @GetMapping("/search/by-email")
     public ResponseEntity<EmployeeDto> findByEmail(@RequestParam String email) {
         EmployeeDto employeeDto = employeeService.findByEmailDto(email);
-        if (employeeDto != null) {
+//        if (employeeDto != null) {
             return ResponseEntity.ok(employeeDto);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+//        } else {
+//            return ResponseEntity.notFound().build();
+//        }
+        //Замість  return ResponseEntity.notFound().build();
+        //можна було створити @ControllerAdvice для обробки винятків
     }
 
     @GetMapping
