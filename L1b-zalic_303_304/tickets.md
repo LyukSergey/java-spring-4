@@ -9,7 +9,7 @@
 * `Controller`, `Service`, `Repository` класи. База даних наповнена тестовими даними.
 
 ---
-
+// GET http://localhost:8080/employees/search/by-position?position=Java Developer
 #### **Завдання по `Employee` (Робота з однією сутністю)**
 
 1.  **Завдання 1**: Створити ендпоінт `GET /employees`, який повертає список `List<EmployeeDto>` **всіх** співробітників.

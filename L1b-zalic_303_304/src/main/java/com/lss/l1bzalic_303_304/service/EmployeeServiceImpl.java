@@ -25,6 +25,19 @@ public class EmployeeServiceImpl implements EmployeeService {
     public List<EmployeeDto> getTop3BySalary() {
         return employeeMapper.toDtoList(employeeRepository.findTop3ByOrderBySalaryDesc());
     }
+    @Override
+    public List<EmployeeDto> findByPosition(String position) {
+        return employeeRepository.findByPosition(position)
+                .stream()
+                .map(employee -> new EmployeeDto(
+                        employee.getId(),
+                        employee.getFirstName() + " " + employee.getLastName(),
+                        employee.getPosition(),
+                        employee.getSalary(),
+                        employee.getDepartment() != null ? employee.getDepartment().getName() : null
+                ))
+                .collect(Collectors.toList());
+    }
 
     @Override
     public EmployeeDto createEmployee(EmployeeCreateDto dto) {

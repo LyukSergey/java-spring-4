@@ -32,4 +32,8 @@ public class EmployeeController {
         EmployeeDto createdEmployee = employeeService.createEmployee(employeeCreateDto);
         return new ResponseEntity<>(createdEmployee, HttpStatus.CREATED);
     }
+    @GetMapping("/search/by-position")
+    public List<EmployeeDto> findByPosition(@RequestParam String position) {
+        return employeeService.findByPosition(position);
+    }
 }

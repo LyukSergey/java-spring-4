@@ -9,4 +9,6 @@ public interface EmployeeService {
     List<EmployeeDto> getTop3BySalary();
     EmployeeDto createEmployee(EmployeeCreateDto employeeCreateDto);
     List<EmployeeDto> getAllEmployees();
+    List<EmployeeDto> findByPosition(String position);
 }
+

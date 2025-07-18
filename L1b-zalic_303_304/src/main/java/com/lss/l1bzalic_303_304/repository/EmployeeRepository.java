@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     List<Employee> findTop3ByOrderBySalaryDesc();
+    List<Employee> findByPosition(String position);
 }
+

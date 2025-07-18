@@ -15,6 +15,16 @@
         <module name="starter1" />
         <module name="starter2" />
       </profile>
+      <profile name="Annotation profile for L1-spring-boot" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="L1-spring-boot" />
+      </profile>
       <profile name="Annotation profile for zad_2" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -29,7 +39,6 @@
         <module name="L1-sb-data-jpa" />
         <module name="l1-spring-security-db" />
         <module name="L1b-zalic_303_304" />
-        <module name="L1-spring-boot" />
         <module name="demo" />
       </profile>
     </annotationProcessing>
