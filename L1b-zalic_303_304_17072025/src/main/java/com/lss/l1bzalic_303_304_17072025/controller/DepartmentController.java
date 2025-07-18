@@ -14,4 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class DepartmentController {
 
+    private final DepartmentService departmentService;
+
+    @GetMapping("/departments/without-employees")
+    public ResponseEntity<List<DepartmentDto>> getDepartmentsWithoutEmployees() {
+        List<DepartmentDto> departments = departmentService.getDepartmentsWithoutEmployees();
+        return ResponseEntity.ok(departments);
+    }
 }
