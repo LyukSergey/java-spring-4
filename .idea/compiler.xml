@@ -48,6 +48,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="demo" target="17" />
       <module name="L1-b-keckeloack-demo" target="17" />
       <module name="L1-keylockdemo" target="17" />
       <module name="L1-sb-data-jpa-test" target="17" />
