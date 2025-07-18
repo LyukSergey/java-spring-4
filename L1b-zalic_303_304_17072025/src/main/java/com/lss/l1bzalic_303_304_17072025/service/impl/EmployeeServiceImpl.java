@@ -4,6 +4,7 @@ import com.lss.l1bzalic_303_304_17072025.service.EmployeeService;
 import com.lss.l1bzalic_303_304_17072025.repository.EmployeeRepository;
 import com.lss.l1bzalic_303_304_17072025.dto.EmployeeDto;
 import com.lss.l1bzalic_303_304_17072025.entity.Employee;
+import jakarta.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,7 +16,9 @@ import org.springframework.stereotype.Service;
 public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeRepository employeeRepository;
 
+    //Потрібно було використати @Transactional. Я додав
     @Override
+    @Transactional
     public List<EmployeeDto> findBySalaryRange(BigDecimal minSalary, BigDecimal maxSalary) {
         List<Employee> employees = employeeRepository.findBySalaryBetweenOrderBySalaryDesc(minSalary, maxSalary);
         return employees.stream().map(emp -> new EmployeeDto(

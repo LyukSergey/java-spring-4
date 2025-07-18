@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     List<Employee> findTop3ByOrderBySalaryDesc();
 
-    @EntityGraph(attributePaths = "department")
+    //Це лишнє
+    //@EntityGraph(attributePaths = "department")
     List<Employee> findBySalaryBetweenOrderBySalaryDesc(java.math.BigDecimal minSalary, java.math.BigDecimal maxSalary);
 }

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class EmployeeController {
     private final EmployeeService employeeService;
 
+    //Треба було повернути ResponseEntity<List<EmployeeDto>>
     @GetMapping("/employees/search/by-salary-range")
     public List<EmployeeDto> getEmployeesBySalaryRange(
             @org.springframework.web.bind.annotation.RequestParam("minSalary") java.math.BigDecimal minSalary,
