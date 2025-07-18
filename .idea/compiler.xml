@@ -7,40 +7,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="L1-sb-profiling-starter" />
         <module name="app-main" />
         <module name="app-maven-plugin" />
-        <module name="app-data" />
         <module name="L1-sb-unit-integration-tests-controller-advice" />
-        <module name="L1-hetun" />
-        <module name="l1-sb-getun-starter" />
-      </profile>
-      <profile name="Annotation profile for L1-spring-boot-security" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-        </processorPath>
-        <module name="L1-spring-boot-security" />
-        <module name="L1-spring-boot" />
+        <module name="app-data" />
       </profile>
       <profile name="Annotation profile for L1b-zalic_303_304" enabled="true">
-      <profile name="Annotation profile for l1-sb-getun-starter" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
-        <module name="L1-spring-boot-security-spa-add-new-user" />
-        <module name="L1-spring-boot-security-spa" />
-        <module name="L1-sb-profiling-starter-test" />
-        <module name="L1-sb-data-jpa" />
-        <module name="l1-spring-security-db" />
         <module name="L1b-zalic_303_304" />
-        <module name="L1-spring-boot" />
       </profile>
     </annotationProcessing>
   </component>
@@ -55,13 +34,12 @@
       <module name="L1-spring-boot-security" options="-parameters" />
       <module name="L1-spring-boot-security-spa" options="-parameters" />
       <module name="L1-spring-boot-security-spa-add-new-user" options="-parameters" />
-      <module name="l1-sb-getun-starter" options="-parameters" />
       <module name="L1b-zalic_303_304" options="-parameters" />
       <module name="app-data" options="-parameters" />
       <module name="app-main" options="-parameters" />
       <module name="app-maven-plugin" options="-parameters" />
+      <module name="l1-sb-getun-starter" options="-parameters" />
       <module name="l1-spring-security-db" options="-parameters" />
-      <module name="l1b-maven" options="" />
     </option>
   </component>
 </project>
