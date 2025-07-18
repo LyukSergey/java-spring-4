@@ -1,3 +1,17 @@
 spring:
   application:
     name: L1-spring-boot-security-spa-add-new-user
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8081/realms/my-prod-app-realm
+
+#Конфігурація для підключення до Keycloak Admin API
+keycloak:
+  admin-client:
+    server-url: http://localhost:8081
+    realm: my-prod-app-realm
+    # Дані конфіденційного клієнта
+    client-id: backend-admin-client
+    client-secret: QCYjr2HHAath9oZj85QPlI3NB0jGSesg
