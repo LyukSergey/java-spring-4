@@ -12,5 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping
 @RequiredArgsConstructor
 public class EmployeeController {
+    private final EmployeeService employeeService;
 
+    @GetMapping("/employees/sorted")
+    public List<EmployeeDto> getSortedEmployees() {
+        return employeeService.getSortedEmployees();
+    }
 }
