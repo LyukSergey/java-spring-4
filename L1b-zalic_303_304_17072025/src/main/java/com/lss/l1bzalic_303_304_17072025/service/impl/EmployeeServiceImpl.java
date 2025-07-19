@@ -1,5 +1,6 @@
 package com.lss.l1bzalic_303_304_17072025.service.impl;
 
+import com.lss.l1bzalic_303_304_17072025.mapper.BaseMapper;
 import com.lss.l1bzalic_303_304_17072025.service.EmployeeService;
 import com.lss.l1bzalic_303_304_17072025.dto.EmployeeWithNestedDepartmentDto;
 import com.lss.l1bzalic_303_304_17072025.dto.EmployeeDto;
@@ -15,8 +16,10 @@ import java.util.NoSuchElementException;
 @Service
 @RequiredArgsConstructor
 public class EmployeeServiceImpl implements EmployeeService {
+
     private final EmployeeRepository employeeRepository;
     private final DepartmentRepository departmentRepository;
+    private final BaseMapper baseMapper;
 
     @Override
     public EmployeeWithNestedDepartmentDto getEmployeeWithDepartmentById(Long id) {
@@ -33,7 +36,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                 departmentDto
         );
     }
-    
+
     @Override
     public EmployeeDto changeEmployeeDepartment(Long employeeId, Long departmentId) {
         Employee employee = employeeRepository.findById(employeeId)
@@ -41,15 +44,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         Department department = departmentRepository.findById(departmentId)
                 .orElseThrow(() -> new NoSuchElementException("Department not found with id: " + departmentId));
         employee.setDepartment(department);
-        employeeRepository.save(employee);
-        String fullName = employee.getFirstName() + " " + employee.getLastName();
-        return new EmployeeDto(
-                employee.getId(),
-                fullName,
-                employee.getPosition(),
-                employee.getSalary(),
-                department.getName()
-        );
+        return baseMapper.toEmployeeDto(employeeRepository.save(employee));
     }
 
 }
