@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/L1-spring-boot-security-spa/L1-sb-profilling-starter-homenko/L1-sb-profilling-starter-homenko.iml" filepath="$PROJECT_DIR$/L1-spring-boot-security-spa/L1-sb-profilling-starter-homenko/L1-sb-profilling-starter-homenko.iml" />
-      <module fileurl="file://$PROJECT_DIR$/L1b-zalic_303_304_17072025/L1b-zalic_303_304_17072025.iml" filepath="$PROJECT_DIR$/L1b-zalic_303_304_17072025/L1b-zalic_303_304_17072025.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/java-spring-4.iml" filepath="$PROJECT_DIR$/.idea/java-spring-4.iml" />
       <module fileurl="file://$PROJECT_DIR$/untitled/untitled.iml" filepath="$PROJECT_DIR$/untitled/untitled.iml" />
     </modules>
