@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     List<Employee> findTop3ByOrderBySalaryDesc();
 
-    @Query("SELECT e FROM Employee e JOIN FETCH e.department")
-    List<Employee> findAllWithDepartment();
+    //Це лишнє
+    //@Query("SELECT e FROM Employee e JOIN FETCH e.department")
+//    List<Employee> findAllWithDepartment();
 }
